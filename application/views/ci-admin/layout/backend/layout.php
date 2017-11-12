@@ -104,7 +104,7 @@
               </div>
             </li>
 
-            <li><a href="notifications.html" class=""><i class="lnr lnr-cart"></i> <span>Order</span></a></li>
+            <li><a href="<?php echo  base_url('ci-admin/bill')?>" class=""><i class="lnr lnr-cart"></i> <span>Bill</span></a></li>
 
 
 
@@ -267,6 +267,10 @@
 
       $('#dataProduct').DataTable( {
         "ajax": "<?php echo base_url('ci-admin/product/data-product') ?>"
+      });
+
+      $('#dataBill').DataTable( {
+        "ajax": "<?php echo base_url('ci-admin/bill/data-bill') ?>"
       });
 
       $("#dataMenu").on("click", ".menudelete #menuDelete", function(){

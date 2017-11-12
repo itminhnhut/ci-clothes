@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th10 12, 2017 lúc 09:30 AM
+-- Thời gian đã tạo: Th10 12, 2017 lúc 01:51 PM
 -- Phiên bản máy phục vụ: 5.7.20-0ubuntu0.16.04.1
 -- Phiên bản PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -59,6 +59,13 @@ CREATE TABLE `bill` (
   `status` tinyint(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `bill`
+--
+
+INSERT INTO `bill` (`id`, `idCustomer`, `discount`, `status`) VALUES
+(1, 1, 10, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -69,8 +76,17 @@ CREATE TABLE `cart` (
   `id` int(100) NOT NULL,
   `idProduct` int(100) NOT NULL,
   `price` int(100) NOT NULL,
+  `quantity` int(100) NOT NULL,
   `idBill` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id`, `idProduct`, `price`, `quantity`, `idBill`) VALUES
+(1, 1, 10000, 2, 1),
+(2, 2, 10000, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -86,6 +102,13 @@ CREATE TABLE `customer` (
   `meno` varchar(100) NOT NULL,
   `create_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `customer`
+--
+
+INSERT INTO `customer` (`id`, `name`, `address`, `sdt`, `meno`, `create_date`) VALUES
+(1, 'nhut', 'test', 1667423434, 'test', '2017-11-12 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -201,7 +224,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `slug`, `idParent`, `idSubChild`, `idChild`, `des`, `content`, `keyword`, `description`, `price`, `salePrice`, `create_date`, `status`) VALUES
-(1, 'nguyễn hồ minh nhựt', 'nguyen-ho-minh-nhut', 1, 2, 4, '', '', '', '', 0, 0, '2017-11-12 09:06:11', 1);
+(1, 'nguyễn hồ minh nhựt', 'nguyen-ho-minh-nhut', 1, 2, 4, '', '', '', '', 0, 0, '2017-11-12 09:06:11', 1),
+(2, 'nguyễn hồ minh nhựt 2', 'nguyen-ho-minh-nhut 2', 1, 2, 4, '', '', '', '', 0, 0, '2017-11-12 09:06:11', 1);
 
 -- --------------------------------------------------------
 
@@ -329,17 +353,17 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT cho bảng `imagefooter`
 --
@@ -354,12 +378,12 @@ ALTER TABLE `imageProduct`
 -- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT cho bảng `slider`
 --
