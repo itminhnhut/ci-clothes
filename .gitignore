@@ -1,15 +1,15 @@
 .DS_Store
 
-application/cache/*
+#application/cache/*
 !application/cache/index.html
 
 application/logs/*
 !application/logs/index.html
 
 #not commit 2 file
-application/config/*
-!application/config/config.php
-!application/config/database.php
+#application/config/*
+application/config/config.php
+application/config/database.php
 
 
 !application/*/.htaccess
