@@ -476,7 +476,9 @@ if (  stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/upload')
       stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/product/ajax-edit-menu-product') ||
       stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/product/upload/(:num)') ||
       stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/product/list_files/(:num)') ||
-      stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/product/remove')
+      stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/product/remove')||
+
+      stripos($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],'ci-admin/bill/prinfBill')
 
 
 

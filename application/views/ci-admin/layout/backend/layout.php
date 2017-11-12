@@ -327,7 +327,23 @@
 
     });
   </script>
+  <script>
+    $(document).ready(function(){
+      $("#dataBill").on("click", "#printBill", function(){
+        idBill = $(this).attr('data');
 
+        $.ajax({
+            type: "post",
+             url: "<?php echo base_url('ci-admin/bill/prinfBill') ?>",
+             data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>','list':idBill},
+             success: function(data) {
+
+                  window.location = 'http://nhut-laravel.dev/ci-admin/bill/prinfBill';// you can use window.open also
+              }
+            });
+      });
+    });
+  </script>
 </body>
 
 </html>

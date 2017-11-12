@@ -10,6 +10,8 @@
       function __construct()
       {
          parent::__construct();
+                 $this->load->library('word');
+
          $this->CI =& get_instance();
          $this->csrf = array(
             'name' => $this->security->get_csrf_token_name(),
@@ -85,7 +87,7 @@
             $value['discount'].'%',
             ($value['status']) ? 'Đã Giao Hàng' : 'Chưa Giao Hàng',
             $value['create_date'],
-            $value[] = '<a href="'.base_url('ci-admin/bill/edit/'.$value['id']).'"><span type="button"  name="edit" id="" class="fa fa-print"></span></a>',
+            $value[] = '<a id="printBill" data="'.$value['id'].'" class="fa fa-print"></span></a>',
             $value[] = '<a href="'.base_url('ci-admin/bill/view/'.$value['id']).'"><span type="button"  name="edit" id="" class="fa fa-file-o"></span></a>',
           );
         }
@@ -100,14 +102,52 @@
       }
       public function view($id)
       {
-         $query  = $this->db->select('c.price as price, quantity,p.name As nameProdcut,ct.name as nameCustomer,address,sdt,meno,discount')
+         $query  = $this->db->select('c.price as price, quantity,p.name As nameProdcut,discount')
                             ->from('product AS p ,cart As c , customer AS ct,bill AS b')
                             ->where('p.id = c.idProduct and c.idBill = b.id and ct.id = b.idCustomer')
                             ->where('b.id',$id)
                             ->get()
                             ->result_array();
-         var_dump($query);
-         $this->template->load('layout', 'contents' , 'ci-admin/bill/view.php',array('id'=>$id,'data'=>$query,'csrf'=>$this->csrf));
+
+         $customer  = $this->db->select('ct.name as nameCustomer,address,sdt,meno,discount')
+                            ->from('customer AS ct,bill AS b')
+                            ->where('ct.id = b.idCustomer')
+                            ->where('b.id',$id)
+                            ->get()
+                            ->result_array();
+          $breadcrum = array(
+            'br1' => array('name' => 'Home', 'url'=>'ci-admin'),
+            'br2' => array('name' => 'Bill', 'url'=>'ci-admin/bill'),
+            'br3' => array('name' => 'View Bill'),
+         );
+
+         $this->template->breadcrum($breadcrum);
+         $this->template->load('layout', 'contents' , 'ci-admin/bill/view.php',array('id'=>$id,'data'=>$query,'customer'=>$customer,'csrf'=>$this->csrf));
+      }
+      public function prinfBill()
+      {
+
+         $id = $this->security->xss_clean($this->input->post("list"));
+         $PHPWord = $this->word; // New Word Document
+        $section = $PHPWord->createSection(); // New portrait section
+        // Add text elements
+        $section->addText('Hello World!');
+        $section->addTextBreak(2);
+        $section->addText('I am inline styled.', array('name'=>'Verdana', 'color'=>'006699'));
+        $section->addTextBreak(2);
+        $PHPWord->addFontStyle('rStyle', array('bold'=>true, 'italic'=>true, 'size'=>16));
+        $PHPWord->addParagraphStyle('pStyle', array('align'=>'center', 'spaceAfter'=>100));
+        $section->addText('I am styled by two style definitions.', 'rStyle', 'pStyle');
+        $section->addText('I have only a paragraph style definition.', null, 'pStyle');
+        // Save File / Download (Download dialog, prompt user to save or simply open it)
+        $filename='just_some_random_name.docx'; //save our document as this file name
+      //  header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
+        header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
+        header('Cache-Control: max-age=0'); //no cache
+        $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
+        $objWriter->save('php://output');
+        echo 1;exit;
+
       }
    }
 ?>
