@@ -10,7 +10,7 @@
       function __construct()
       {
          parent::__construct();
-                 $this->load->library('word');
+         $this->load->library('word');
 
          $this->CI =& get_instance();
          $this->csrf = array(
@@ -129,24 +129,35 @@
 
          $id = $this->security->xss_clean($this->input->post("list"));
          $PHPWord = $this->word; // New Word Document
-        $section = $PHPWord->createSection(); // New portrait section
+           $section = $this->word->createSection(array('orientation'=>'landscape'));
+
+        // $section = $PHPWord->createSection(); // New portrait section
+
         // Add text elements
-        $section->addText('Hello World!');
+        $section->addText('Hello World! minh nhựt');
         $section->addTextBreak(2);
-        $section->addText('I am inline styled.', array('name'=>'Verdana', 'color'=>'006699'));
-        $section->addTextBreak(2);
-        $PHPWord->addFontStyle('rStyle', array('bold'=>true, 'italic'=>true, 'size'=>16));
-        $PHPWord->addParagraphStyle('pStyle', array('align'=>'center', 'spaceAfter'=>100));
-        $section->addText('I am styled by two style definitions.', 'rStyle', 'pStyle');
-        $section->addText('I have only a paragraph style definition.', null, 'pStyle');
+        // $section->addText('I am inline styled.', array('name'=>'Verdana', 'color'=>'006699'));
+        // $section->addTextBreak(2);
+        // $PHPWord->addFontStyle('rStyle', array('bold'=>true, 'italic'=>true, 'size'=>16));
+        // $PHPWord->addParagraphStyle('pStyle', array('align'=>'center', 'spaceAfter'=>100));
+        // $section->addText('I am styled by Nguyễn Hồ two style definitions.', 'rStyle', 'pStyle');
+        // $section->addText('I have only a paragraph style definition.', null, 'pStyle');
         // Save File / Download (Download dialog, prompt user to save or simply open it)
         $filename='just_some_random_name.docx'; //save our document as this file name
-      //  header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
-        header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
-        header('Cache-Control: max-age=0'); //no cache
+       // header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
+        // header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
+        // header('Cache-Control: max-age=0'); //no cache
+        //
+        header('Content-Type: application/vnd.ms-word');
+        header('Content-disposition: attachment; filename="'.$filename.'"; charset=utf-8');
+        header('Cache-Control: max-age=0');
         $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
         $objWriter->save('php://output');
-        echo 1;exit;
+
+        $PHPWord->setDefaultFontSize(12);
+        $PHPWord->setDefaultFontName('Arial');
+
+        echo 1;
 
       }
    }

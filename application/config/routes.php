@@ -129,7 +129,7 @@ $route['ci-admin/bill']                        = 'ci_bill/index';
 $route['ci-admin/bill/edit/(:num)']            = 'ci_bill/edit/$1';
 $route['ci-admin/bill/data-bill']              = 'ci_bill/dataBill';
 $route['ci-admin/bill/view/(:num)']            = 'ci_bill/view/$1';
-
+$route['ci-admin/bill/prinfBill']              = 'ci_bill/prinfBill';
 /*font_end
 trang loại*/
 $route['categories/(:any)/page/(:num)'] = 'trangchu/trangloai/$1/$2';

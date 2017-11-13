@@ -34,7 +34,7 @@
                <td><?php echo number_format($total) ?> VNĐ</td>
             </tr>
          <?php endif; ?>
-         <?php if($value['discount'] >0) : ?>
+         <?php if(($value['discount'] >0)&& $i ==(count($data)+1)) : ?>
             <tr>
                <td></td>
                <td></td>
