@@ -117,5 +117,13 @@ class Template {
          $this->set('breadcrum', implode("\r\n", $this->_breadcrumb) . "\r\n");
          $this->CI->load->view('ci-admin/layout/backend/'.$template, $this->template_data);
        }
+       function masterlayoutFondend($template = '', $name ='', $view = '' , $view_data = array(), $return = FALSE)
+       {
+         $this->set($name , $this->CI->load->view($view, $view_data, TRUE));
+         $this->set('styles', implode("\r\n", $this->_styles) . "\r\n");
+         $this->set('scripts_header', implode("\r\n", $this->_scripts_header) . "\r\n");
+         $this->set('breadcrum', implode("\r\n", $this->_breadcrumb) . "\r\n");
+         $this->CI->load->view('layouts/font_end/'.$template, $this->template_data);
+       }
     }
     ?>

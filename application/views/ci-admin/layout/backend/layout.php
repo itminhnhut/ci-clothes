@@ -338,7 +338,7 @@
              data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>','list':idBill},
              success: function(data) {
 
-                  window.location = 'http://nhut-laravel.dev/ci-admin/bill/prinfBill';// you can use window.open also
+                  window.location = 'http://ciapplycation.vn/ci-admin/bill/prinfBill';// you can use window.open also
               }
             });
       });
