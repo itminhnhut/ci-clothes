@@ -2,13 +2,11 @@
    /**
    *
    */
-include_once(APPPATH."third_party/PhpWord/Autoloader.php");
+include_once(APPPATH."third_party/PhpOffice/PhpWord/Autoloader.php");
 
 use PhpOffice\PhpWord\Autoloader;
 use PhpOffice\PhpWord\Settings;
 
-use PhpOffice\PhpWord\Style\Font;
-use PhpOffice\PhpWord\Style\Paragraph;
 Autoloader::register();
 Settings::loadConfig();
    class Ci_Bill extends CI_Controller
@@ -29,7 +27,6 @@ Settings::loadConfig();
       }
       public function index()
       {
-        phpinfo();
          $data = array();
          $breadcrum = array(
             'br1' => array('name' => 'Home', 'url'=>'ci-admin'),
