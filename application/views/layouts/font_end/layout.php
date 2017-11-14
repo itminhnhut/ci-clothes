@@ -245,7 +245,7 @@ media='all' />
 media='all' />
 <!--[if lte IE 9]><link rel='stylesheet' id='roadthemes-ie-css'  href="ie1.css-ver=20121010.css" tppabs="http://demo.roadthemes.com/maroko/wp-content/themes/maroko/css/ie1.css?ver=20121010" type='text/css' media='all' /> <![endif]-->
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/slide.js"></script>
-<script type='text/javascript'>
+<!-- <script type='text/javascript'>
     var wc_add_to_cart_params = {
         "ajax_url": "http:\/\/demo.roadthemes.com\/maroko\/wp-admin\/admin-ajax.php",
         "wc_ajax_url": "http:\/\/demo.roadthemes.com\/maroko\/?wc-ajax=%%endpoint%%",
@@ -254,7 +254,7 @@ media='all' />
         "is_cart": "",
         "cart_redirect_after_add": "no"
     };
-</script>
+</script> -->
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/js1.js"></script>
 <link rel='https://api.w.org/' href='http://demo.roadthemes.com/maroko/wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://demo.roadthemes.com/maroko/xmlrpc.php?rsd" />
@@ -365,9 +365,10 @@ body {
     .wpb_animate_when_almost_visible{opacity:1}
 </style>
 </noscript>
-<?php echo $styles;?>
+<?php echo $styles; ?>
 </head>
 <body>
+    <input type="hidden" name="BASE_URL" value="<?php echo base_url(); ?>" >
     <div id="yith-wcwl-popup-message" style="display:none;">
         <div id="yith-wcwl-message"></div>
     </div>
@@ -856,29 +857,7 @@ body {
                                     <div class="top-link">
                                         <div class="widget woocommerce widget_shopping_cart">
                                             <h2 class="widgettitle">Cart</h2>
-                                            <div class="widget_shopping_cart_content">
-                                                <div class="cart-toggler">
-                                                    <a href="http://demo.roadthemes.com/maroko/cart/">
-                                                        <span class="mini-cart-link">
-                                                            <i class="fa fa-shopping-cart"></i>
-                                                        </span>
-                                                        <span class="cart-quantity">
-                                                        0       </span>
-                                                        <!--<span class="cart-total"><span class="amount">&pound;0.00</span></span>-->
-                                                    </a>
-                                                </div>
-                                                <div class="mini_cart_content" style="height: 0px;">
-                                                    <div class="mini_cart_inner">
-                                                        <div class="mini_cart_arrow"></div>
-                                                        <ul class="cart_empty ">
-                                                            <li>You have no items in your shopping cart</li>
-                                                            <li class="total">Subtotal: <span class="amount">£0.00</span></li>
-                                                        </ul>
-
-                                                    </div>
-                                                    <div class="loading"></div>
-                                                </div>
-                                            </div>
+                                            <div id="cartMenu"></div>
                                         </div>
                                         <div class="sidebar-toggler"> <i class="fa fa-bars"></i>
                                         </div>
@@ -927,7 +906,7 @@ body {
     </div>
     <div class= "main-container front-page">
        <div class="page-content">
-        <?php echo $contents;?>
+        <?php echo $contents; ?>
     </div>
 </div>
 <div class="footer">
@@ -1507,7 +1486,7 @@ body {
     </aside>
 </div>
 <div id="back-top" class="hidden-xs hidden-sm hidden-md"></div>
-<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_1.js"></script>
 <script type='text/javascript'>
     var _wpcf7 = {
@@ -1551,6 +1530,10 @@ body {
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_11.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/slick.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/trangchu.js"></script>
-<?php echo $scripts_header;?>
+<!-- cart -->
+<script type="text/javascript" src="<?=base_url()?>assets/cart/cart.js"></script>
+
+<?php echo $scripts_header; ?>
+
 </body>
 </html>

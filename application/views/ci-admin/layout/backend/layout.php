@@ -344,7 +344,6 @@ else:
              url: "<?php echo base_url('ci-admin/bill/prinfBill') ?>",
              data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>','list':idBill},
              success: function(data) {
-
                   window.location = urlLink;// you can use window.open also
               }
             });

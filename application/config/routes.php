@@ -48,88 +48,88 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Examples: my-controller/index  -> my_controller/index
 |     my-controller/my-method -> my_controller/my_method
-*/
-$route['default_controller']    = 'trangchu/index';
+ */
+$route['default_controller'] = 'trangchu/index';
 $route['404_override'] = '';
-$route['translate_uri_dashes']  = FALSE;
-$route['login/getLogin']        = 'login/getLogin';
-$route['ci-admin']              = 'ci_Admin';
-$route['login']                 = 'login';
-$route['login/logout']          = 'login/logout';
+$route['translate_uri_dashes'] = FALSE;
+$route['login/getLogin'] = 'login/getLogin';
+$route['ci-admin'] = 'ci_Admin';
+$route['login'] = 'login';
+$route['login/logout'] = 'login/logout';
 /**
  * slider image
  */
-$route['ci-admin/image-slider']               = 'ci_Image/index';
-$route['ci-admin/upload-multi-image-slider']  = 'ci_image/slider';
-$route['ci-admin/upload']                     = 'ci_Image/upload';
-$route['ci-admin/list_files']                 = 'ci_Image/list_files';
-$route['ci-admin/remove']                     = 'ci_Image/remove';
-$route['ci-admin/order-image']                = 'ci_image/orderImage';
-$route['ci-admin/multi-image/edit/(:num)']    = 'ci_image/edit/$1';
+$route['ci-admin/image-slider'] = 'ci_Image/index';
+$route['ci-admin/upload-multi-image-slider'] = 'ci_image/slider';
+$route['ci-admin/upload'] = 'ci_Image/upload';
+$route['ci-admin/list_files'] = 'ci_Image/list_files';
+$route['ci-admin/remove'] = 'ci_Image/remove';
+$route['ci-admin/order-image'] = 'ci_image/orderImage';
+$route['ci-admin/multi-image/edit/(:num)'] = 'ci_image/edit/$1';
 /**
  * banner image
  */
-$route['ci-admin/image-banner']                   = 'ci_banner_image/index';
-$route['ci-admin/upload-multi-image-banner']      = 'ci_banner_image/banner';
-$route['ci-admin/banner/upload']                  = 'ci_banner_image/upload';
-$route['ci-admin/banner/remove']                  = 'ci_banner_image/remove';
-$route['ci-admin/banner/list_files']              = 'ci_banner_image/list_files';
-$route['ci-admin/banner/order-banner']            = 'ci_banner_image/orderBanner';
-$route['ci-admin/multi-banner/edit/(:num)']       = 'ci_banner_image/edit/$1';
+$route['ci-admin/image-banner'] = 'ci_banner_image/index';
+$route['ci-admin/upload-multi-image-banner'] = 'ci_banner_image/banner';
+$route['ci-admin/banner/upload'] = 'ci_banner_image/upload';
+$route['ci-admin/banner/remove'] = 'ci_banner_image/remove';
+$route['ci-admin/banner/list_files'] = 'ci_banner_image/list_files';
+$route['ci-admin/banner/order-banner'] = 'ci_banner_image/orderBanner';
+$route['ci-admin/multi-banner/edit/(:num)'] = 'ci_banner_image/edit/$1';
 /**
  * banner footer
  */
-$route['ci-admin/image-footer']                 = 'ci_footer_image/index';
-$route['ci-admin/upload-multi-image-footer']    = 'ci_footer_image/footer';
-$route['ci-admin/footer/upload']                = 'ci_footer_image/upload';
-$route['ci-admin/footer/remove']                = 'ci_footer_image/remove';
-$route['ci-admin/footer/list_files']            = 'ci_footer_image/list_files';
-$route['ci-admin/footer/order-footer']          = 'ci_footer_image/orderFooter';
-$route['ci-admin/multi-footer/edit/(:num)']     = 'ci_footer_image/edit/$1';
+$route['ci-admin/image-footer'] = 'ci_footer_image/index';
+$route['ci-admin/upload-multi-image-footer'] = 'ci_footer_image/footer';
+$route['ci-admin/footer/upload'] = 'ci_footer_image/upload';
+$route['ci-admin/footer/remove'] = 'ci_footer_image/remove';
+$route['ci-admin/footer/list_files'] = 'ci_footer_image/list_files';
+$route['ci-admin/footer/order-footer'] = 'ci_footer_image/orderFooter';
+$route['ci-admin/multi-footer/edit/(:num)'] = 'ci_footer_image/edit/$1';
 /**
  * menu
  */
-$route['ci-admin/menu']               = 'ci_menu/index';
-$route['ci-admin/menu/create']        = 'ci_menu/create';
-$route['ci-admin/menu/order']         = 'ci_menu/order';
-$route['ci-admin/menu/order-menu']    = 'ci_menu/orderMenu';
-$route['ci-admin/menu/data-menu']     = 'ci_menu/dataMenu';
-$route['ci-admin/menu/edit/(:num)']   = 'ci_menu/edit/$1';
-$route['ci-admin/menu/delete']        = 'ci_menu/delete';
-$route['ci-admin/menu/image/(:num)']  = 'ci_menu/menuImage/$1';
+$route['ci-admin/menu'] = 'ci_menu/index';
+$route['ci-admin/menu/create'] = 'ci_menu/create';
+$route['ci-admin/menu/order'] = 'ci_menu/order';
+$route['ci-admin/menu/order-menu'] = 'ci_menu/orderMenu';
+$route['ci-admin/menu/data-menu'] = 'ci_menu/dataMenu';
+$route['ci-admin/menu/edit/(:num)'] = 'ci_menu/edit/$1';
+$route['ci-admin/menu/delete'] = 'ci_menu/delete';
+$route['ci-admin/menu/image/(:num)'] = 'ci_menu/menuImage/$1';
 
-$route['ci-admin/menu/upload/(:num)']         = 'ci_menu/upload/$1';
-$route['ci-admin/menu/remove']                = 'ci_menu/remove';
-$route['ci-admin/menu/list_files/(:num)']     = 'ci_menu/list_files/$1';
-$route['ci-admin/menu/order-menu-img']        = 'ci_menu/orderMenuImg';
+$route['ci-admin/menu/upload/(:num)'] = 'ci_menu/upload/$1';
+$route['ci-admin/menu/remove'] = 'ci_menu/remove';
+$route['ci-admin/menu/list_files/(:num)'] = 'ci_menu/list_files/$1';
+$route['ci-admin/menu/order-menu-img'] = 'ci_menu/orderMenuImg';
 
 /**
  * Product
  */
-$route['ci-admin/product']                        = 'ci_product/index';
-$route['ci-admin/product/create']                 = 'ci_product/create';
-$route['ci-admin/product/ajax-menu-product']      = 'ci_product/ajaxMenu';
-$route['ci-admin/product/edit/(:num)']            = 'ci_product/edit/$1';
+$route['ci-admin/product'] = 'ci_product/index';
+$route['ci-admin/product/create'] = 'ci_product/create';
+$route['ci-admin/product/ajax-menu-product'] = 'ci_product/ajaxMenu';
+$route['ci-admin/product/edit/(:num)'] = 'ci_product/edit/$1';
 $route['ci-admin/product/ajax-edit-menu-product'] = 'ci_product/ajaxEditMenu';
-$route['ci-admin/product/data-product']           = 'ci_product/dataProduct';
-$route['ci-admin/product/delete']                 = 'ci_product/delete';
+$route['ci-admin/product/data-product'] = 'ci_product/dataProduct';
+$route['ci-admin/product/delete'] = 'ci_product/delete';
 /**
  * Multi image for product
  */
-$route['ci-admin/product/image/(:num)']                        = 'ci_product/image/$1';
-$route['ci-admin/product/upload-multi-image-product/(:num)']   = 'ci_product/uploadMultiImageProduct/$1';
-$route['ci-admin/product/upload/(:num)']                       = 'ci_product/upload/$1';
-$route['ci-admin/product/list_files/(:num)']                   = 'ci_product/list_files/$1';
-$route['ci-admin/product/remove']                              = 'ci_product/remove';
-$route['ci-admin/product/image/edit/(:num)']                   = 'ci_product/editImage/$1';
+$route['ci-admin/product/image/(:num)'] = 'ci_product/image/$1';
+$route['ci-admin/product/upload-multi-image-product/(:num)'] = 'ci_product/uploadMultiImageProduct/$1';
+$route['ci-admin/product/upload/(:num)'] = 'ci_product/upload/$1';
+$route['ci-admin/product/list_files/(:num)'] = 'ci_product/list_files/$1';
+$route['ci-admin/product/remove'] = 'ci_product/remove';
+$route['ci-admin/product/image/edit/(:num)'] = 'ci_product/editImage/$1';
 /**
  * Bill
  */
-$route['ci-admin/bill']                        = 'ci_bill/index';
-$route['ci-admin/bill/edit/(:num)']            = 'ci_bill/edit/$1';
-$route['ci-admin/bill/data-bill']              = 'ci_bill/dataBill';
-$route['ci-admin/bill/view/(:num)']            = 'ci_bill/view/$1';
-$route['ci-admin/bill/prinfBill']              = 'ci_bill/prinfBill';
+$route['ci-admin/bill'] = 'ci_bill/index';
+$route['ci-admin/bill/edit/(:num)'] = 'ci_bill/edit/$1';
+$route['ci-admin/bill/data-bill'] = 'ci_bill/dataBill';
+$route['ci-admin/bill/view/(:num)'] = 'ci_bill/view/$1';
+$route['ci-admin/bill/prinfBill'] = 'ci_bill/prinfBill';
 /*font_end
 trang loại*/
 $route['categories/(:any)/page/(:num)'] = 'trangchu/trangloai/$1/$2';
@@ -139,3 +139,8 @@ $route['categories/(:any)'] = 'trangchu/trangloai/$1';
 $route['blog/(:any).html'] = 'trangchu/blog_chitiet/1$/2$';
 $route['blog/(:any)/page/(:num)'] = 'trangchu/blog/$1/$2';
 $route['blog'] = 'trangchu/blog/$1';
+/**
+ * cart
+ */
+$route['ajax-cart/add'] = 'cart/add';
+$route['ajax-cart/beforeadd'] = 'cart/beforeadd';

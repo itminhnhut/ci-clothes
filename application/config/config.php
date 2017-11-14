@@ -483,7 +483,7 @@ if (stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ci-admin/upload'
 ) {
 	$config['csrf_protection'] = false;
 } else {
-	$config['csrf_protection'] = true;
+	$config['csrf_protection'] = false;
 }
 
 // if (stripos($_SERVER["REQUEST_URI"],'/ci-admin/remove') === TRUE) {
