@@ -1,17 +1,22 @@
 <?php
-      $this->csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-      );
-    if (!isset($this->session->userdata['id'])) :
-       $this->load->view('login/login',array('csrf'=>$this->csrf));
-    else :
+$this->csrf = array(
+	'name' => $this->security->get_csrf_token_name(),
+	'hash' => $this->security->get_csrf_hash(),
+);
+if (!isset($this->session->userdata['id'])):
+	$this->load->view('login/login', array('csrf' => $this->csrf));
+else:
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
-  <title><?php  if(isset($title)) echo $title;else echo 'Dashboard | Klorofil - Free Bootstrap Dashboard Template';?></title>
+  <title><?php if (isset($title)) {
+	echo $title;
+} else {
+	echo 'Dashboard | Klorofil - Free Bootstrap Dashboard Template';
+}
+?></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -100,11 +105,12 @@
               <div id="subProduct" class="collapse ">
                 <ul class="nav">
                   <li><a href="<?php echo base_url('ci-admin/product'); ?>" class="">Product</a></li>
+                  <li><a href="<?php echo base_url('ci-admin/product/create'); ?>" class="">Product Create</a></li>
                 </ul>
               </div>
             </li>
 
-            <li><a href="<?php echo  base_url('ci-admin/bill')?>" class=""><i class="lnr lnr-cart"></i> <span>Bill</span></a></li>
+            <li><a href="<?php echo base_url('ci-admin/bill') ?>" class=""><i class="lnr lnr-cart"></i> <span>Bill</span></a></li>
 
 
 
@@ -130,7 +136,7 @@
         <div class="container-fluid">
           <div class="row">
             <?php echo $breadcrum; ?>
-            <?php echo $contents;?>
+            <?php echo $contents; ?>
           </div>
         </div>
       </div>
@@ -154,17 +160,17 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 
-  <!-- <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js')?>"></script> -->
-  <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js')?>"></script>
-  <script src="<?php echo base_url('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')?>"></script>
-  <script src="<?php echo base_url('assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js')?>"></script>
-  <script src="<?php echo base_url('assets/vendor/chartist/js/chartist.min.js')?>"></script>
-  <script src="<?php echo base_url('assets/scripts/klorofil-common.js')?>"></script>
+  <!-- <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js') ?>"></script> -->
+  <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/chartist/js/chartist.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/scripts/klorofil-common.js') ?>"></script>
   <!-- -->
   <script src="<?php echo base_url('vendor/dropzone/dropzone.min.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/a.js'); ?>"></script>
   <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
-  <?php echo $scripts_header;?>
+  <?php echo $scripts_header; ?>
   <script>
   $( function() {
     $( "#sortable" ).sortable({
@@ -331,6 +337,7 @@
     $(document).ready(function(){
       $("#dataBill").on("click", "#printBill", function(){
         idBill = $(this).attr('data');
+        urlLink = $('#dataBill #printBill').attr('name');
 
         $.ajax({
             type: "post",
@@ -338,7 +345,7 @@
              data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>','list':idBill},
              success: function(data) {
 
-                  window.location = 'http://demo.ci.dev/ci-admin/bill/prinfBill';// you can use window.open also
+                  window.location = urlLink;// you can use window.open also
               }
             });
       });
@@ -347,4 +354,4 @@
 </body>
 
 </html>
-<?php endif; ?>
+<?php endif;?>
