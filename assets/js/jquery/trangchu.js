@@ -1,8 +1,8 @@
 $(document).ready(function() {
   $('body').append($('<div class=load>'));
-  // $('.product-image .add-to-cart a').click(function() {
-  //   $('.load').load("trangchu/popup_cart");
-  // });
+  $('.product-image .add-to-cart a').click(function() {
+    $('.load').load("trangchu/popup_cart");
+  });
   $('.responsive').slick({
     dots: true,
     infinite: false,

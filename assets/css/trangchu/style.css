@@ -17513,7 +17513,9 @@ body.quickview {
     position: relative;
     text-shadow: none;
     text-transform: uppercase;
-    background: none
+    background: none;
+    cursor: pointer
+
 }
 
 .main-container .shop-products .item-col .product-wrapper .actions .add-to-cart .add_to_cart_inline a.button:hover {

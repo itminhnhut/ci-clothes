@@ -2,7 +2,7 @@ $(document).ready(function() {
    var url = $("input[name='BASE_URL']").val();
     $.ajax({
             type: "post",
-             url: url+'/ajax-cart/beforeadd',
+             url: url+'ajax-cart/beforeadd',
              data: {'id':1},
              success: function(data) {
                 $('#cartMenu').html(data);
@@ -18,12 +18,24 @@ $(document).ready(function() {
       img      = $(this).attr('data-product_image');
        $.ajax({
             type: "post",
-             url: url+'/ajax-cart/add',
+             url: url+'ajax-cart/add',
              data: {'id':id,'quantity':quantity,'price':price,'name':name,'img':img},
              success: function(data) {
                 $('#cartMenu').html(data);
+                $.ajax({
+                  type: "post",
+                  url: url+'ajax-cart/popcart',
+                  data: {'price':price,'name':name,'img':img},
+                   success: function(data) {
+                      $('#popupcart').html(data);
+                      $('#popupcart .close').click(function(){
+                        $('.atc-notice-wrapper').fadeOut();
+                        $('.atc-notice').html(' ');
+                     });
+                   }
+                });
               }
             });
-
    });
+
 })

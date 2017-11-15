@@ -6,7 +6,7 @@ class Cart extends CI_Controller {
    public function __construct() {
 
       parent::__construct();
-       $this->load->library('cart');
+      $this->load->library('cart');
    }
 
    public function index() {
@@ -16,27 +16,34 @@ class Cart extends CI_Controller {
       $id = $this->input->post('id');
       $this->load->helper('cart_menu');
       $quantity = $this->input->post('quantity');
-      $price    = $this->input->post('price');
-      $name     = $this->input->post('name');
-      $img      = $this->input->post('img');
+      $price = $this->input->post('price');
+      $name = $this->input->post('name');
+      $img = $this->input->post('img');
 
       $data = array(
-         'id'       => $id,
-         'qty'      => $quantity,
-         'price'    => $price,
-         'img'      => $img,
-         'name'     => $name
+         'id' => $id,
+         'qty' => $quantity,
+         'price' => $price,
+         'img' => $img,
+         'name' => $name,
       );
 
-     $this->cart->insert($data);
-     $infoCart     =  $this->cart->contents();
-     MenuCart($infoCart);
+      $this->cart->insert($data);
+      $infoCart = $this->cart->contents();
+      MenuCart($infoCart);
+
    }
-   public function beforeadd()
-   {
+   public function beforeadd() {
       $id = $this->input->post('id');
       $this->load->helper('cart_menu');
-     $infoCart     =  $this->cart->contents();
-     MenuCart($infoCart);
+      $infoCart = $this->cart->contents();
+      MenuCart($infoCart);
+   }
+   public function popcart() {
+      $this->load->helper('cart_menu');
+      $price = $this->input->post('price');
+      $name = $this->input->post('name');
+      $img = $this->input->post('img');
+      PopupCart($name,$price,$img);
    }
 }

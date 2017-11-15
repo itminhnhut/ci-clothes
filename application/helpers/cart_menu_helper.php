@@ -27,7 +27,6 @@
     function MenuCart($infoCart)
     {
         $total = count($infoCart);
-
         $html  = '';
         $html .= '<div class="widget_shopping_cart_content">';
         $html .= '<div class="cart-toggler">';
@@ -49,9 +48,13 @@
         }
         else
         {
+             $totalPrice = 0;
              $html .= '<ul class="cart_list product_list_widget ">';
              $html .= '<li>Bạn có '.$total.' sản phầm trong giỏ hàng</li>';
              foreach($infoCart as $key => $value){
+
+                 $totalPrice += $value['price'] * $value['qty'];
+
                  $html .= '<li>';
                  $html .= '<a class="product-image">';
                  $html .= '<img src="'.base_url($value['img']).'">';
@@ -72,7 +75,7 @@
              }
               $html .= '</ul>';
               $html .= '<p class="total">';
-              $html .= 'Subtotal: <span class="amount">'.$value['price'].'</span>';
+              $html .= 'Subtotal: <span class="amount">'.number_format($totalPrice).' VNĐ </span>';
               $html .= '</p>';
               $html .= '<p class="buttons">';
               $html .= '<a href="" class="button checkout wc-forward" >Checkout</a>';
@@ -83,6 +86,34 @@
         //$html .= '<div class="loading"></div>';
         $html .= '</div>';
         $html .= '</div>';
+        echo $html;
+    }
+    function PopupCart($name,$price,$img)
+    {
+        $html  = '';
+        $html .= '<div class="atc-notice-wrapper">';
+        $html .= '<div class="atc-notice">';
+        $html .= '<h3>Product is added to cart</h3>';
+        $html .= '<div class="product-wrapper">';
+        $html .= '<div class="product-image">';
+        $html .= '<img width="115" height="148" src="'.base_url($img).'" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" sizes="(max-width: 115px) 100vw, 115px">';
+        $html .= '</div>';
+        $html .= '<div class="product-info">';
+        $html .= '<h4>'.$name.'</h4>';
+        $html .= '<p class="price"><span class="special-price"><span class="amount">'.number_format($price).' VNĐ</span></span></p>';
+        $html .= '</div>';
+        $html .= '</div>';
+
+        $html .= '<div class="buttons">';
+        $html .= '<a class="button" href="http://demo.roadthemes.com/maroko/cart/">View Cart</a>';
+        $html .= '</div>';
+        $html .= '</div>';
+
+        $html .= '<div class="close">';
+        $html .= '<i class="fa fa-times-circle"></i>';
+        $html .= '</div>';
+        $html .= '</div>';
+
         echo $html;
     }
 ?>
