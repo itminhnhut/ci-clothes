@@ -42,7 +42,6 @@
         $html .= '<div class="mini_cart_content" style="height: 0px;">';
         $html .= '<div class="mini_cart_inner">';
         $html .= '<div class="mini_cart_arrow"></div>';
-        $html .= '<ul class="cart_empty">';
         if($total == 0)
         {
             $html .= '<li>Bạn không có sản phầm nào trong giỏ hàng</li>';
@@ -50,22 +49,38 @@
         }
         else
         {
+             $html .= '<ul class="cart_list product_list_widget ">';
              $html .= '<li>Bạn có '.$total.' sản phầm trong giỏ hàng</li>';
              foreach($infoCart as $key => $value){
                  $html .= '<li>';
-                 $html .= '<a>';
+                 $html .= '<a class="product-image">';
                  $html .= '<img src="'.base_url($value['img']).'">';
-                 $html .= '<span>'.$value['name'].'</span>';
-                 $html .= '<span>'.$value['qty'].'</span>';
-                 $html .= '<span>'.$value['price'].'</span>';
+                 $html .= '<span class="quantity">'.$value['qty'].'</span>';
                  $html .= '<a>';
+                 $html .='<div class="product-details">';
+                 $html .= '<a class="remove" href="">';
+                 $html .='<i class="fa fa-times-circle"></i>';
+                 $html .= '</a>';
+                 $html .= '<a class="product-name" href="">';
+                 $html .= '<span>'.$value['name'].'</span>';
+                 $html .= '</a>';
+                 $html .= '<span class="quantity">';
+                 $html .= '<span class="amount">'.$value['price'].'</span>';
+                 $html .= '</span>';
+                 $html .= '</div>';
                  $html .= '</li>';
              }
+              $html .= '</ul>';
+              $html .= '<p class="total">';
+              $html .= 'Subtotal: <span class="amount">'.$value['price'].'</span>';
+              $html .= '</p>';
+              $html .= '<p class="buttons">';
+              $html .= '<a href="" class="button checkout wc-forward" >Checkout</a>';
+              $html .='</p>';
         }
 
-        $html .= '</ul>';
         $html .= '</div>';
-        $html .= '<div class="loading"></div>';
+        //$html .= '<div class="loading"></div>';
         $html .= '</div>';
         $html .= '</div>';
         echo $html;
