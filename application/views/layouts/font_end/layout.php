@@ -10,19 +10,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test CI Application</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/ci_cart.css">
-     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/plugin_1.css">
+     <!-- <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/plugin_1.css"> -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/style.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/menu.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/icon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/reponsive.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/plugin.css">
+    <!-- <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/plugin.css"> -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/trangchu/plugin_2.css">
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="pingback" href="http://demo.roadthemes.com/maroko/xmlrpc.php" />
+   <!--  <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="http://demo.roadthemes.com/maroko/xmlrpc.php" /> -->
     <link rel="icon" type="image/png" href="http://demo.roadthemes.com/maroko/wp-content/uploads/2015/07/favicon.ico">
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
         var road_brandnumber = 5,
         road_brandscroll = true,
         road_brandscrollnumber = 2,
@@ -111,7 +111,7 @@
                 "complete" === b.readyState && c.readyCallback()
             })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)))
         }(window, document, window._wpemojiSettings); /*]]>*/
-    </script>
+    </script> -->
     <style type="text/css">
     img.wp-smiley,
     img.emoji {
@@ -127,7 +127,7 @@
     }
 </style>
 <style id='rs-plugin-settings-inline-css' type='text/css'>
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700)
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700)*/
 /*tpa=http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700*/
 
 ;
@@ -151,7 +151,7 @@
 }
 
 .largeredbtn {
-    font-family: "Raleway", sans-serif;
+    font-family: "arial", sans-serif;
     font-weight: 900;
     font-size: 16px;
     line-height: 60px;
@@ -239,10 +239,10 @@
     border-radius: 400px
 }
 </style>
-<link rel='stylesheet' id='tp-raleway-css' href="http://fonts.googleapis.com/css?family=Raleway%3A400%2C900%2C800%2C700%2C600%2C500%2C200%2C100%2C300&ver=4.7.4" tppabs="http://fonts.googleapis.com/css?family=Raleway%3A400%2C900%2C800%2C700%2C600%2C500%2C200%2C100%2C300&ver=4.7.4" type='text/css'
+<!-- <link rel='stylesheet' id='tp-raleway-css' href="http://fonts.googleapis.com/css?family=Raleway%3A400%2C900%2C800%2C700%2C600%2C500%2C200%2C100%2C300&ver=4.7.4" tppabs="http://fonts.googleapis.com/css?family=Raleway%3A400%2C900%2C800%2C700%2C600%2C500%2C200%2C100%2C300&ver=4.7.4" type='text/css'
 media='all' />
 <link rel='stylesheet' id='roadthemes-fonts-css' href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext" tppabs="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext" type='text/css'
-media='all' />
+media='all' /> -->
 <!--[if lte IE 9]><link rel='stylesheet' id='roadthemes-ie-css'  href="ie1.css-ver=20121010.css" tppabs="http://demo.roadthemes.com/maroko/wp-content/themes/maroko/css/ie1.css?ver=20121010" type='text/css' media='all' /> <![endif]-->
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/slide.js"></script>
 <!-- <script type='text/javascript'>
@@ -255,16 +255,16 @@ media='all' />
         "cart_redirect_after_add": "no"
     };
 </script> -->
-<script type="text/javascript" src="<?=base_url()?>assets/js/jquery/js1.js"></script>
-<link rel='https://api.w.org/' href='http://demo.roadthemes.com/maroko/wp-json/' />
+<!-- <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/js1.js"></script> -->
+<!-- <link rel='https://api.w.org/' href='http://demo.roadthemes.com/maroko/wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://demo.roadthemes.com/maroko/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://demo.roadthemes.com/maroko/wp-includes/wlwmanifest.xml" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://demo.roadthemes.com/maroko/wp-includes/wlwmanifest.xml" /> -->
 <meta name="generator" content="WordPress 4.7.4" />
 <meta name="generator" content="WooCommerce 2.4.7" />
-<link rel='shortlink' href='http://demo.roadthemes.com/maroko/' />
+<!-- <link rel='shortlink' href='http://demo.roadthemes.com/maroko/' />
 <link rel="alternate" type="application/json+oembed" href="http://demo.roadthemes.com/maroko/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.roadthemes.com%2Fmaroko%2F" />
-<link rel="alternate" type="text/xml+oembed" href="http://demo.roadthemes.com/maroko/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.roadthemes.com%2Fmaroko%2F&#038;format=xml" />
-<script type="text/javascript">
+<link rel="alternate" type="text/xml+oembed" href="http://demo.roadthemes.com/maroko/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.roadthemes.com%2Fmaroko%2F&#038;format=xml" /> -->
+<!-- <script type="text/javascript">
     jQuery(document).ready(function() {
         var ajaxRevslider = function(obj) {
             var content = "";
@@ -307,11 +307,11 @@ media='all' />
             }
         }, 30);
     });
-</script>
-<script type="text/javascript" src="<?=base_url()?>assets/js/jquery/addthis_widget.js"></script>
-<script type="text/javascript">
+</script> -->
+<!-- <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/addthis_widget.js"></script> -->
+<!-- <script type="text/javascript">
     var ajaxurl = 'http://demo.roadthemes.com/maroko/wp-admin/admin-ajax.php' /*tpa=http://demo.roadthemes.com/maroko/wp-admin/admin-ajax.php*/ ;
-</script>
+</script> -->
 <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="vc_lte_ie9.css" tppabs="http://demo.roadthemes.com/maroko/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.css" media="screen"><![endif]-->
 <!--[if IE  8]><link rel="stylesheet" type="text/css" href="vc-ie8.css" tppabs="http://demo.roadthemes.com/maroko/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]-->
@@ -1487,14 +1487,14 @@ body {
 </div>
 <div id="back-top" class="hidden-xs hidden-sm hidden-md"></div>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_1.js"></script>
+<!-- <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_1.js"></script>
 <script type='text/javascript'>
     var _wpcf7 = {
         "loaderUrl": "http:\/\/ciapplycation.vn\/assets\/img\/anh\/ajax-loader.gif",
         "sending": "Sending ...",
         "cached": "1"
     };
-</script>
+</script> -->
 <!-- <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_2.js"></script>
 <script type='text/javascript'>
     var woocommerce_params = {
@@ -1502,7 +1502,7 @@ body {
         "wc_ajax_url": "http:\/\/demo.roadthemes.com\/maroko\/?wc-ajax=%%endpoint%%"
     };
 </script> -->
-<script type='text/javascript'>
+<!-- <script type='text/javascript'>
     var wc_cart_fragments_params = {
         "ajax_url": "http:\/\/demo.roadthemes.com\/maroko\/wp-admin\/admin-ajax.php",
         "wc_ajax_url": "http:\/\/demo.roadthemes.com\/maroko\/?wc-ajax=%%endpoint%%",
@@ -1516,7 +1516,7 @@ body {
         "current_language": "en",
         "icl_home": "http:\/\/demo.roadthemes.com\/maroko"
     };
-</script>
+</script> -->
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/price_slider.js"></script>
 <script type='text/javascript'>
     var woocommerce_price_slider_params = {
@@ -1526,8 +1526,8 @@ body {
         "max_price": ""
     };
 </script>
-<script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_9.js"></script>
-<script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_11.js"></script>
+<!-- <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/plugin_9.js"></script>-->
+<script type="text/javascript" src="<?=base_url()?>assets/js/jquery/breadcum.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/slick.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/trangchu.js"></script>
 <!-- cart -->
