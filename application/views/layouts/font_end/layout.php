@@ -1519,6 +1519,7 @@ body {
 </script> -->
 <script type="text/javascript" src="<?=base_url()?>assets/js/jquery/price_slider.js"></script>
 <script type='text/javascript'>
+
     var woocommerce_price_slider_params = {
         "currency_symbol": "\u00a3",
         "currency_pos": "left",

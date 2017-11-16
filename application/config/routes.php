@@ -145,3 +145,4 @@ $route['blog'] = 'trangchu/blog/$1';
 $route['ajax-cart/add'] = 'cart/add';
 $route['ajax-cart/beforeadd'] = 'cart/beforeadd';
 $route['ajax-cart/popcart'] = 'cart/popcart';
+$route['ajax-cart/removeId'] = 'cart/rowid';
