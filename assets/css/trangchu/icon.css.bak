@@ -1,11 +1,16 @@
 @font-face {
     font-family: 'moon';
     src: url('/assets/fonts/font/icomoon.eot')
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/mega_main_menu/framework/src/fonts/icomoon.eot*/
     ;
     src: url('/assets/fonts/font/icomoon.eot-#iefix')
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/mega_main_menu/framework/src/fonts/icomoon.eot?#iefix*/
     format('embedded-opentype'), url('/assets/fonts/font/icomoon.svg#moon')
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/mega_main_menu/framework/src/fonts/icomoon.svg#moon*/
     format('svg'), url('/assets/fonts/font/icomoon.woff')
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/mega_main_menu/framework/src/fonts/icomoon.woff*/
     format('woff'), url('/assets/fonts/font/icomoon.ttf')
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/mega_main_menu/framework/src/fonts/icomoon.ttf*/
     format('truetype');
     font-weight: normal;
     font-style: normal

@@ -31,15 +31,24 @@
         transform: rotate(360deg)
     }
 }
-/*@font-face {
+@font-face {
     font-family: star;
     src: url(/assets/fonts/font/star.eot)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/star.eot*/
 
     ;
     src: url(/assets/fonts/font/star.eot-#iefix)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/star.eot?#iefix*/
+
     format("embedded-opentype"), url(/assets/fonts/font/star.woff)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/star.woff*/
+
     format("woff"), url(/assets/fonts/font/star.ttf)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/star.ttf*/
+
     format("truetype"), url(/assets/fonts/font/star.svg#star)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/star.svg#star*/
+
     format("svg");
     font-weight: 400;
     font-style: normal
@@ -47,19 +56,25 @@
 @font-face {
     font-family: WooCommerce;
     src: url(/assets/fonts/font/WooCommerce.eot)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.eot*/
+
     ;
     src: url(/assets/fonts/font/WooCommerce.eot-#iefix)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.eot?#iefix*/
 
     format("embedded-opentype"), url(/assets/fonts/font/WooCommerce.woff)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.woff*/
 
     format("woff"), url(/assets/fonts/font/WooCommerce.ttf)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.ttf*/
 
     format("truetype"), url(/assets/fonts/font/WooCommerce.svg#WooCommerce)
+    /*tpa=http://demo.roadthemes.com/maroko/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.svg#WooCommerce*/
 
     format("svg");
     font-weight: 400;
     font-style: normal
-}*/
+}
 p.demo_store {
     position: fixed;
     top: 0;
