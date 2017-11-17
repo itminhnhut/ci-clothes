@@ -30,16 +30,14 @@ $('#cartMenu').on("click",".remove", function(e) {
                 jQuery('#mcitem-' + rowId).remove();
                 jQuery('#lcitem-' + rowId).remove();
                 jQuery('#lcitem-' + rowId).remove();
+                jQuery('span.cart-quantity').html(data.tt);
                 jQuery('.product_list_widget  li:nth-child(1)').html(data.total);
                 jQuery('.total span').html(data.totalPrice+' VNĐ');
                 var mCartHeight = jQuery('.mini_cart_inner').outerHeight();
                 jQuery('.mini_cart_content').animate({
                     'height': mCartHeight
                 });
-            }, 1000);
-            //total
-            // jQuery('.mini_cart_content').removeClass('loading');
-            // jQuery('.cart-form').removeClass('loading');
+            }, 1200);
          }
       });
 
@@ -75,5 +73,75 @@ $('#cartMenu').on("click",".remove", function(e) {
          }
       });
    });
+   $('.cart_item').on('change','.quantity .input-text',function(e){
+      var _self = $(this),
+      gettr = _self.parents("tr").eq(0),
+      rowid = gettr.attr('id'),
+      qty   = _self.val();
+     // var regex1 = new RegExp("^(10)\d*$");
+     //
+      var regex1 = new RegExp("^(10)\d*$");
+      console.log(qty);
+      if(regex1.test(qty))
+      {
+         console.log('oki');
+         // var price = $('#'+rowid+ ' .product-price span').attr('data-product_price');
 
+         // $('#'+rowid+' .product-subtotal span.amount').html(number_format(qty*price)+' VNĐ');
+         // $.ajax({
+         //    type: "post",
+         //    dataType: 'json',
+         //    url: url+'cart/addrowId',
+         //    data: {'rowid':rowid ,'qty':qty},
+         //    success: function(data) {
+         //       $('#font_car_total1').html(data.totalPrice+' VNĐ');
+         //    }
+         // });
+      }
+      else{
+          // alert('Số lượng không được nhỏ hơn 1 và lớn hơn 10');
+          console.log('no');
+      }
+
+
+   });
+
+    $('.cart_item').on('click','.del',function(e){
+       var _self = $(this),
+          gettr = _self.parents("tr").eq(0),
+          rowid = gettr.attr('id');
+          $.ajax({
+         type: "post",
+         dataType: 'json',
+         url: url+'ajax-cart/removeId',
+         data: {'rowid':rowid},
+         success: function(data) {
+           $('#font_car_total1').html(data.totalPrice+' VNĐ');
+         }
+      });
+      gettr.remove();
+
+    });
+
+   function number_format (number, decimals, dec_point, thousands_sep) {
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
 })

@@ -21,9 +21,6 @@ class Trangchu extends CI_Controller {
         $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/trangloai', $this->data);
     }
 
-     public function shopping_cart() {
-        $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/shopping_cart', $this->data);
-    }
 
     public function blog() {
         $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/blog', $this->data);

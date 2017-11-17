@@ -145,3 +145,15 @@ body {
     -webkit-box-shadow: none;
     text-shadow: none;
 }
+#font_car_total{
+    font-size: 18px;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    color: #c38749;
+    font-weight: 700;
+}
+#font_car_total1{
+    font-size: 18px;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    color: #c38749;
+    font-weight: 700;
+}

@@ -142,7 +142,9 @@ $route['blog'] = 'trangchu/blog/$1';
 /**
  * cart
  */
-$route['ajax-cart/add'] = 'cart/add';
-$route['ajax-cart/beforeadd'] = 'cart/beforeadd';
-$route['ajax-cart/popcart'] = 'cart/popcart';
-$route['ajax-cart/removeId'] = 'cart/rowid';
+$route['ajax-cart/add']              = 'cart/add';
+$route['ajax-cart/beforeadd']        = 'cart/beforeadd';
+$route['ajax-cart/popcart']          = 'cart/popcart';
+$route['ajax-cart/removeId']         = 'cart/rowid';
+$route['cart']                       = 'cart/shopping_cart';
+$route['cart/addrowId']              = 'cart/addrowId';

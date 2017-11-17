@@ -4,7 +4,7 @@ function MenuCart($infoCart) {
    $html = '';
    $html .= '<div class="widget_shopping_cart_content">';
    $html .= '<div class="cart-toggler">';
-   $html .= '<a href="http://demo.roadthemes.com/maroko/cart/">';
+   $html .= '<a href="'.base_url('cart').'">';
    $html .= '<span class="mini-cart-link">';
    $html .= '<i class="fa fa-shopping-cart"></i>';
    $html .= '</span>';
@@ -49,7 +49,7 @@ function MenuCart($infoCart) {
       $html .= 'Tổng Tiền : <span class="amount">' . number_format($totalPrice) . ' VNĐ </span>';
       $html .= '</p>';
       $html .= '<p class="buttons">';
-      $html .= '<a href="" class="button checkout wc-forward" >Checkout</a>';
+      $html .= '<a href="'.base_url('cart').'" class="button checkout wc-forward" >Checkout</a>';
       $html .= '</p>';
    }
 
@@ -75,7 +75,7 @@ function PopupCart($name, $price, $img) {
    $html .= '</div>';
 
    $html .= '<div class="buttons">';
-   $html .= '<a class="button" href="http://demo.roadthemes.com/maroko/cart/">View Cart</a>';
+   $html .= '<a class="button" href="'.base_url('cart').'">View Cart</a>';
    $html .= '</div>';
    $html .= '</div>';
 
@@ -94,6 +94,7 @@ function Rowid($infoCart) {
          $totalPrice += $value['price'] * $value['qty'];
    }
      echo json_encode(array(
+              'tt'         => $total,
               'total'      => $rs_total,
               'totalPrice' => number_format($totalPrice)
            ));
