@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
  */
-$config['base_url'] = 'http://ciapplycation.vn/';
+$config['base_url'] = 'http://nhut-laravel.dev/';
 
 /*
 |--------------------------------------------------------------------------
@@ -478,7 +478,13 @@ if (stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ci-admin/upload'
 	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ci-admin/product/list_files/(:num)') ||
 	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ci-admin/product/remove') ||
 
-	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ci-admin/bill/prinfBill')
+	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ci-admin/bill/prinfBill') ||
+
+	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ajax-cart/beforeadd') ||
+	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ajax-cart/add') ||
+	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ajax-cart/popcart') ||
+	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'ajax-cart/removeId') ||
+	stripos($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], 'cart/addrowId')
 
 ) {
 	$config['csrf_protection'] = false;
