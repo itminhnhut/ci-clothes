@@ -17,6 +17,10 @@
                            <div class="wpb_wrapper">
                               <div class="woocommerce">
                                  <form action="http://demo.roadthemes.com/maroko/cart/" method="post">
+                                    <?php
+                                       $count = count($data);
+                                       if($count >0):
+                                     ?>
                                     <table class="shop_table cart" cellspacing="0">
                                        <thead>
                                           <tr>
@@ -30,10 +34,9 @@
                                        </thead>
                                        <tbody>
                                        <?php
-                                          $count = count($data);
+
                                           $i = 1;
                                           $total = 0;
-                                          if($count >0):
                                             foreach($data as $key => $value):
                                                 $i++;
                                                 $total += $value['price'] * $value['qty'];
@@ -73,22 +76,24 @@
                                        <?php endif; ?>
                                  </tbody>
                               </table>
+                              <?php  if($count > 0) : ?>
                               <div class="row">
                                  <div style="float: right;" class="col-xs-2 col-md-2">
                                     <div class="buttons-cart">
-                                       <a class="continue" href="http://demo.roadthemes.com/maroko/shop/">Continue Shopping</a>
+                                       <a class="continue" href="<?php echo base_url('cart/customer'); ?>">Continue Shopping</a>
                                     </div>
                                  </div>
                               </form>
-                              <?php if($count = 0) : ?>
+                              <?php endif; ?>
+                              <?php  if($count == 0) : ?>
                               <div class="row-container">
                                  <div class="wpb_column vc_column_container vc_col-sm-12">
                                     <div class="wpb_wrapper">
                                        <div class="wpb_text_column wpb_content_element ">
                                           <div class="wpb_wrapper">
                                              <div class="woocommerce">
-                                                <p class="cart-empty">Your cart is currently empty.</p>
-                                                <p class="return-to-shop"><a class="button wc-backward" href="http://demo.roadthemes.com/maroko/shop/">Return To Shop</a></p>
+                                                <p class="cart-empty">Bạn không có giỏ hàng nào</p>
+                                                <p class="return-to-shop"><a class="button wc-backward" href="<?php echo base_url() ?>">Return To Shop</a></p>
                                              </div>
                                           </div>
                                        </div>

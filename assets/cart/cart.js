@@ -78,29 +78,27 @@ $('#cartMenu').on("click",".remove", function(e) {
       gettr = _self.parents("tr").eq(0),
       rowid = gettr.attr('id'),
       qty   = _self.val();
-     // var regex1 = new RegExp("^(10)\d*$");
-     //
-      var regex1 = new RegExp("^(10)\d*$");
-      console.log(qty);
-      if(regex1.test(qty))
-      {
-         console.log('oki');
-         // var price = $('#'+rowid+ ' .product-price span').attr('data-product_price');
 
-         // $('#'+rowid+' .product-subtotal span.amount').html(number_format(qty*price)+' VNĐ');
-         // $.ajax({
-         //    type: "post",
-         //    dataType: 'json',
-         //    url: url+'cart/addrowId',
-         //    data: {'rowid':rowid ,'qty':qty},
-         //    success: function(data) {
-         //       $('#font_car_total1').html(data.totalPrice+' VNĐ');
-         //    }
-         // });
+      var regex = new RegExp("^[(1-9)(\.)]\d*$");
+      var regex1 = new RegExp("^(10)\d*$");
+      if(regex.test(qty) || regex1.test(qty) )
+      {
+         var price = $('#'+rowid+ ' .product-price span').attr('data-product_price');
+
+         $('#'+rowid+' .product-subtotal span.amount').html(number_format(qty*price)+' VNĐ');
+         $.ajax({
+            type: "post",
+            dataType: 'json',
+            url: url+'cart/addrowId',
+            data: {'rowid':rowid ,'qty':qty},
+            success: function(data) {
+               $('#font_car_total1').html(data.totalPrice+' VNĐ');
+            }
+         });
       }
       else{
-          // alert('Số lượng không được nhỏ hơn 1 và lớn hơn 10');
-          console.log('no');
+          location.reload();
+          alert('Số lượng không được nhỏ hơn 1 và lớn hơn 10');
       }
 
 
@@ -117,6 +115,11 @@ $('#cartMenu').on("click",".remove", function(e) {
          data: {'rowid':rowid},
          success: function(data) {
            $('#font_car_total1').html(data.totalPrice+' VNĐ');
+           if(data.tt ==0)
+           {
+              var delay = 1000;
+              setTimeout(function(){ window.location = url; }, delay);
+           }
          }
       });
       gettr.remove();
