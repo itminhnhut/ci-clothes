@@ -150,3 +150,4 @@ $route['cart']                       = 'cart/shopping_cart';
 $route['cart/addrowId']              = 'cart/addrowId';
 $route['cart/customer']              = 'cart/customer';
 $route['cart/destroy']              =  'cart/destroyCustomer';
+
