@@ -48,12 +48,17 @@
 
     <div class="form-group">
       <label for="description">description:</label>
-      <textarea class="form-control" rows="5" id="description"></textarea>
+      <textarea class="form-control" rows="5" name="description" id="description"></textarea>
    </div>
 
    <div class="form-group">
       <label for="keyword">keyword:</label>
-      <textarea class="form-control" rows="5" id="keyword"></textarea>
+      <textarea class="form-control" rows="5" name="keyword" id="keyword"></textarea>
+   </div>
+
+    <div class="form-group">
+      <label for="tags">tags:</label>
+      <textarea class="form-control" rows="5" name="tags" id="tags"></textarea>
    </div>
 
    <div class="form-group col-md-4 form-select">

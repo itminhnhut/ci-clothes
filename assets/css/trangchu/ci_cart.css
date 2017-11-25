@@ -157,3 +157,8 @@ body {
     color: #c38749;
     font-weight: 700;
 }
+
+.page-content { background-image: url('../../../assets/img/bk404.png')}
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

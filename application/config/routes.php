@@ -49,23 +49,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples: my-controller/index  -> my_controller/index
 |     my-controller/my-method -> my_controller/my_method
  */
-$route['default_controller'] = 'trangchu/index';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
-$route['login/getLogin'] = 'login/getLogin';
-$route['ci-admin'] = 'ci_Admin';
-$route['login'] = 'login';
-$route['login/logout'] = 'login/logout';
+$route['default_controller']        = 'trangchu/index';
+$route['404_override']              = '';
+$route['404']                       = 'View404/index';
+$route['translate_uri_dashes']      = FALSE;
+$route['login/getLogin']            = 'login/getLogin';
+$route['ci-admin']                  = 'ci_Admin';
+$route['login']                     = 'login';
+$route['login/logout']              = 'login/logout';
 /**
  * slider image
  */
-$route['ci-admin/image-slider'] = 'ci_Image/index';
-$route['ci-admin/upload-multi-image-slider'] = 'ci_image/slider';
-$route['ci-admin/upload'] = 'ci_Image/upload';
-$route['ci-admin/list_files'] = 'ci_Image/list_files';
-$route['ci-admin/remove'] = 'ci_Image/remove';
-$route['ci-admin/order-image'] = 'ci_image/orderImage';
-$route['ci-admin/multi-image/edit/(:num)'] = 'ci_image/edit/$1';
+$route['ci-admin/image-slider']                 = 'ci_Image/index';
+$route['ci-admin/upload-multi-image-slider']    = 'ci_image/slider';
+$route['ci-admin/upload']                       = 'ci_Image/upload';
+$route['ci-admin/list_files']                   = 'ci_Image/list_files';
+$route['ci-admin/remove']                       = 'ci_Image/remove';
+$route['ci-admin/order-image']                  = 'ci_image/orderImage';
+$route['ci-admin/multi-image/edit/(:num)']      = 'ci_image/edit/$1';
 /**
  * banner image
  */
@@ -132,8 +133,9 @@ $route['ci-admin/bill/view/(:num)'] = 'ci_bill/view/$1';
 $route['ci-admin/bill/prinfBill'] = 'ci_bill/prinfBill';
 /*font_end
 trang loại*/
-$route['categories/(:any)/page/(:num)'] = 'trangchu/trangloai/$1/$2';
-$route['categories/(:any)'] = 'trangchu/trangloai/$1';
+$route['(:any)-(:num)'] = 'trangchu/trangloai/$1/$2';
+$route['(:any)-(:num)/(:num)'] = 'trangchu/trangloai/$1/$2';
+
 
 /*blog*/
 $route['blog/(:any).html'] = 'trangchu/blog_chitiet/1$/2$';
@@ -149,5 +151,5 @@ $route['ajax-cart/removeId']         = 'cart/rowid';
 $route['cart']                       = 'cart/shopping_cart';
 $route['cart/addrowId']              = 'cart/addrowId';
 $route['cart/customer']              = 'cart/customer';
-$route['cart/destroy']              =  'cart/destroyCustomer';
+$route['cart/destroy']               =  'cart/destroyCustomer';
 

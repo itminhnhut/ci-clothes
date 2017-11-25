@@ -43,10 +43,10 @@
                                        ?>
                                           <tr class="cart_item" id="<?php echo $value['rowid']; ?>">
                                              <td class="product-thumbnail">
-                                                <a href=""><img width="115" height="148" src="<?php echo $value['img'] ?>" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="<?php echo $value['img'] ?>" sizes="(max-width: 115px) 100vw, 115px">
+                                                <a href="<?php echo base_url($value['href']) ?>"><img width="115" height="148" src="<?php echo $value['img'] ?>" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="<?php echo $value['img'] ?>" sizes="(max-width: 115px) 100vw, 115px">
                                                 </a>
                                              </td>
-                                             <td class="product-name"> <a href=""><?php echo $value['name'] ?></a>
+                                             <td class="product-name"> <a href="<?php echo base_url($value['href']) ?>"><?php echo $value['name'] ?></a>
                                              </td>
                                              <td class="product-price"> <span data-product_price="<?php echo $value['price'] ?>" class="amount"><?php echo number_format($value['price']).' VNĐ' ?></span>
                                              </td>

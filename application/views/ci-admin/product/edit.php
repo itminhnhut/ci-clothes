@@ -46,12 +46,17 @@
 
     <div class="form-group">
       <label for="description">description:</label>
-      <textarea class="form-control" rows="5" id="description"><?php echo $data[0]['description']?></textarea>
+      <textarea class="form-control" rows="5" name="description" id="description"><?php echo $data[0]['description']?></textarea>
    </div>
 
    <div class="form-group">
       <label for="keyword">keyword:</label>
-      <textarea class="form-control" rows="5" id="keyword"><?php echo $data[0]['keyword']?></textarea>
+      <textarea class="form-control" rows="5" name="keyword" id="keyword"><?php echo $data[0]['keyword']?></textarea>
+   </div>
+
+   <div class="form-group">
+      <label for="tags">tags:</label>
+      <textarea class="form-control" rows="5" name="tags" id="tags"><?php echo $data[0]['tags']?></textarea>
    </div>
 
    <div class="form-group col-md-4 form-select">

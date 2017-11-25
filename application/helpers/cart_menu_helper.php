@@ -35,11 +35,11 @@ function MenuCart($infoCart) {
          $html .= '<a class="remove" data-product_rowid="' . $value['rowid'] . '" >';
          $html .= '<i class="fa fa-times-circle"></i>';
          $html .= '</a>';
-         $html .= '<a class="product-name" href="" >';
+         $html .= '<a class="product-name" href="'.base_url($value['href']).'" >';
          $html .= '<span>' . $value['name'] . '</span>';
          $html .= '</a>';
          $html .= '<span class="quantity">';
-         $html .= '<span class="amount">' . $value['price'] . '</span>';
+         $html .= '<span class="amount">' . number_format($value['price']) .' VNĐ'. '</span>';
          $html .= '</span>';
          $html .= '</div>';
          $html .= '</li>';
@@ -49,7 +49,7 @@ function MenuCart($infoCart) {
       $html .= 'Tổng Tiền : <span class="amount">' . number_format($totalPrice) . ' VNĐ </span>';
       $html .= '</p>';
       $html .= '<p class="buttons">';
-      $html .= '<a href="'.base_url('cart').'" class="button checkout wc-forward" >Checkout</a>';
+      $html .= '<a href="'.base_url('cart').'" class="button checkout wc-forward" >Xem giỏ hàng</a>';
       $html .= '</p>';
    }
 
@@ -59,11 +59,11 @@ function MenuCart($infoCart) {
    $html .= '</div>';
    echo $html;
 }
-function PopupCart($name, $price, $img) {
+function PopupCart($name, $price, $img ,$href) {
    $html = '';
    $html .= '<div class="atc-notice-wrapper">';
    $html .= '<div class="atc-notice">';
-   $html .= '<h3>Product is added to cart</h3>';
+   $html .= '<h3>sản phầm thêm vào giỏ hàng</h3>';
    $html .= '<div class="product-wrapper">';
    $html .= '<div class="product-image">';
    $html .= '<img width="115" height="148" src="' . base_url($img) . '" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" sizes="(max-width: 115px) 100vw, 115px">';
@@ -75,7 +75,7 @@ function PopupCart($name, $price, $img) {
    $html .= '</div>';
 
    $html .= '<div class="buttons">';
-   $html .= '<a class="button" href="'.base_url('cart').'">View Cart</a>';
+   $html .= '<a class="button" href="'.base_url('cart').'">Xem giỏ hàng</a>';
    $html .= '</div>';
    $html .= '</div>';
 

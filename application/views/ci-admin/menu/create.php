@@ -1,4 +1,4 @@
-<h2>Form control: input</h2>
+<h2>Create menu</h2>
 <form class="form-create-menu" method="post" action="<?php echo base_url('ci-admin/menu/create') ?>">
     <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
     <div class="form-group">

@@ -35,6 +35,7 @@ class Cart extends CI_Controller
         $price = $this->input->post('price');
         $name = $this->input->post('name');
         $img = $this->input->post('img');
+        $href = $this->input->post('href');
 
         $data = array(
          'id' => $id,
@@ -42,6 +43,7 @@ class Cart extends CI_Controller
          'price' => $price,
          'img' => $img,
          'name' => $name,
+         'href' => $href,
         );
         $this->cart->insert($data);
         $infoCart = $this->cart->contents();
@@ -60,7 +62,8 @@ class Cart extends CI_Controller
         $price = $this->input->post('price');
         $name = $this->input->post('name');
         $img = $this->input->post('img');
-        PopupCart($name, $price, $img);
+        $href = $this->input->post('href');
+        PopupCart($name, $price, $img, $href);
     }
     public function rowid()
     {
@@ -150,50 +153,38 @@ class Cart extends CI_Controller
     }
     public function sendmailOrrder()
     {
-        // $config = Array(
-        //     'protocol' => 'SMTP',
-        //     'smtp_host' => 'ssl://smtp.googlemail.com',
-        //     'smtp_port' => 465,
-        //     'smtp_user' => 'itnguyenhominhnhut@gmail.com', // change it to yours
-        //     'smtp_pass' => 'Aa@aA001667423434', // change it to yours
-        //     'mailtype' => 'html',
-        //     'charset' => 'iso-8859-1',
-        //     'wordwrap' => TRUE,
-        //      'newline' => "\r\n",
-        //      'crlf' => "\r\n",
-        //    );
-        // $config = Array(
-        //     'protocol' => 'smtp',
-        //     'smtp_host' => 'smtp.mailtrap.io',
-        //     'smtp_port' => 2525,
-        //     'smtp_user' => '1f394eabc1d395',
-        //     'smtp_pass' => '13d83b7f7d5bc7',
-        //     'crlf' => "\r\n",
-        //     'newline' => "\r\n"
-        //   );
+      //Load email library
+    $this->load->library('email');
 
-        $config = Array(
-            'protocol' => 'smtp',
-            'smtp_host' => 'smtp.mailtrap.io',
-            'smtp_port' => 2525,
-            'smtp_user' => '60a11524f81d2d',
-            'smtp_pass' => '49e2e11f9d6856',
-            'crlf' => "\r\n",
-            'newline' => "\r\n"
-          );
-        $this->email->set_newline("\r\n");
-		$this->email->initialize($config);
-		
-		$this->email->from('itnguyenhominhnhyt@gmail.com', 'Nhut');
-        $this->email->to('itnguyenhominhnhyt@gmail.com'); 
+    //SMTP & mail configuration
+    $config = array(
+        'protocol'  => 'sendmail',
+        'smtp_host' => 'ssl://smtp.gmail.com',
+        'smtp_port' => 465,
+        'smtp_timeout'  => 7,
+        'smtp_user' => 'itnguyenhominhnhut@gmail.com',
+        'smtp_pass' => 'Aa@aAa01667423434',
+        'mailtype'  => 'html',
+        'charset'   => 'utf-8'
+    );
+    $this->load->library('email', $config);
+    $this->email->set_newline("\r\n");
 
-        $this->email->subject('Email Test');
-        $this->email->message('Test gửi nè. coi mail tới chưa');  
+    //Email content
+    $htmlContent = '<h1>Sending email via SMTP server</h1>';
+    $htmlContent .= '<p>This email has sent via SMTP server from CodeIgniter application.</p>';
 
-        if ($this->email->send()) {
-			echo 'Your email was sent, thanks chamil.';
-		} else {
-			show_error($this->email->print_debugger());
-		}
+    $this->email->to('itnguyenhominhnhut@gmail.com');
+    $this->email->from('itnguyenhominhnhut@gmail.com','MyWebsite');
+    $this->email->subject('How to send email via SMTP server in CodeIgniter');
+    $this->email->message($htmlContent);
+
+    //Send email
+    if ( $this->email->send())
+    {
+        echo $this->email->print_debugger();
+    }else{
+        echo  $this->email->print_debugger();
     }
+}
 }

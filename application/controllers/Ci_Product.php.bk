@@ -1,4 +1,4 @@
-<?php
+`<?php
    /**
    *
    */
@@ -22,6 +22,7 @@
 
       public function index()
       {
+
          $breadcrum = array(
             'br1' => array('name' => 'Home', 'url'=>'ci-admin'),
             'br2' => array('name' => 'Product'),
@@ -59,7 +60,6 @@
             $keyword       =  $this->security->xss_clean($this->input->post('keyword'));
             $description   =  $this->security->xss_clean($this->input->post('description'));
             $tags          =  $this->security->xss_clean($this->input->post('tags'));
-
             $price         =  $this->security->xss_clean($this->input->post('price'));
             $salePrice     =  $this->security->xss_clean($this->input->post('salePrice'));
             $status        =  $this->security->xss_clean($this->input->post('status'));
@@ -163,8 +163,10 @@
                'create_date'     =>  date('Y-m-d H:i:s'),
                'status'          =>  $status
             );
+
             $this->db->where('id', $this->security->xss_clean($this->input->post('id')));
             $this->db->update('product', $data);
+
             $this->db->trans_complete();
             if ($this->db->trans_status() === TRUE)
             {
@@ -253,6 +255,7 @@
       }
 
       public function dataProduct(){
+
         $draw = intval($this->input->get("draw"));
         $start = intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
@@ -277,6 +280,7 @@
           "recordsFiltered" => $query->num_rows(),
           "data" => $data
         );
+
         echo json_encode($output);
         exit();
       }
