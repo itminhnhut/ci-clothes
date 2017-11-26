@@ -1,0 +1,68 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Trangchu extends CI_Controller {
+
+  private $CI;
+  public function __construct() {
+    parent::__construct();
+    $this->load->library('javascript');
+    $this->load->model('MenuMulti');
+    $this->load->model('Product');
+    $this->load->model('Slide');
+    $this->CI = &get_instance();
+  }
+
+  public function index() {
+    $data['menu'] = $this->MenuMulti->get_categories();
+    $data['slider'] = $this->Slide->get_slider('slider');
+    $data['banner'] = $this->Slide->get_slider('banner');
+    $this->template->add_css('assets/carousel/assets/owl.carousel.min.css');
+    $this->template->add_css('assets/carousel/assets/owl.theme.default.min.css');
+    $this->template->add_js('assets/carousel/owl.carousel.min.js');
+    $this->template->add_js('assets/carousel/slide_carousel.js');
+    $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/trangchu', array('menu'=>$data['menu'],'slider' => $data['slider'], 'banner' =>$data['banner']));
+  }
+
+  public function trangloai() {
+    $data['menu'] = $this->MenuMulti->get_categories();
+    $this->template->add_js('assets/js/jquery/trangloai.js');
+    $this->template->add_js('assets/js/jquery/plugin_6.js');
+    $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/trangloai',array('menu'=>$data['menu']));
+  }
+
+  public function trangchitiet($slug,$id){
+    $data['row_product'] = $this->Product->get_row_product($id);
+    $data['menu'] = $this->MenuMulti->get_categories();
+    $this->template->add_css('assets/zoom/fancybox-plus.css');
+    $this->template->add_css('assets/css/trangchu/trangchitiet.css');
+    $this->template->add_css('assets/carousel/assets/owl.carousel.min.css');
+    $this->template->add_css('assets/carousel/assets/owl.theme.default.min.css');
+    $this->template->add_js('assets/zoom/ez-plus.js');
+    $this->template->add_js('assets/zoom/fancybox-plus.js');
+    $this->template->add_js('assets/js/jquery/jquery.bxslider.min.js');
+    $this->template->add_js('assets/carousel/owl.carousel.min.js');
+    $this->template->add_js('assets/carousel/jquery.mousewheel.min.js');
+    $this->template->add_js('assets/js/jquery/trangchitiet.js');
+    $this->template->add_js('assets/carousel/slide_carousel.js');
+    $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/trangchitiet',array('menu'=>$data['menu'],'row_product' => $data['row_product']));
+  }
+
+  public function found(){
+    $this->load->view('layouts/font_end/404');
+  }
+
+  public function blog(){
+    $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/blog');
+  }
+
+  public function blog_chitiet(){
+    $this->template->masterlayoutFondend('layout', 'contents', 'layouts/font_end/blog_chitiet');
+  }
+
+  public function popup_cart(){
+    $this->load->view('layouts/font_end/popup_cart');
+  }
+}
+
+?>

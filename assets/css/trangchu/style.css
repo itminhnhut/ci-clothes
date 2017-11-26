@@ -7123,7 +7123,8 @@ figure {
 }
 
 img {
-    vertical-align: middle
+    vertical-align: middle;
+    height: auto!important;
 }
 
 .img-responsive,
@@ -7700,11 +7701,6 @@ pre code {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto
-}
-
-.row {
-    margin-right: -15px;
-    margin-left: -15px
 }
 
 .col-xs-1,
@@ -13389,7 +13385,6 @@ a:focus {
 
 img {
     max-width: 100%;
-    height: auto
 }
 
 h1,
@@ -13768,7 +13763,7 @@ caption {
     box-shadow: none;
     color: #fff;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 700;
     height: 42px;
     right: 15px;
@@ -15578,13 +15573,13 @@ body.quickview {
     left: -200px
 }
 
-.header-container .header .horizontal-menu #mega_main_menu>.menu_holder .menu_inner>ul>li.columns3>ul.mega_dropdown {
+/*.header-container .header .horizontal-menu #mega_main_menu>.menu_holder .menu_inner>ul>li.columns3>ul.mega_dropdown {
     width: 670px
 }
 
 .header-container .header .horizontal-menu #mega_main_menu>.menu_holder .menu_inner>ul>li.columns3.drop_to_center>ul.mega_dropdown {
     left: -305px
-}
+}*/
 
 .header-container .header .horizontal-menu #mega_main_menu>.menu_holder .menu_inner>ul>li.columns4>ul.mega_dropdown {
     width: 880px
@@ -17433,7 +17428,7 @@ body.quickview {
 .main-container .shop-products .item-col .product-wrapper .product-image .price-box .special-price {
     display: block;
     font-size: 24px;
-    margin-top: 40px
+    margin-top: 40px;
 }
 
 .main-container .shop-products .item-col .product-wrapper .product-image .price-box .old-price {
@@ -17745,7 +17740,8 @@ body.quickview {
     position: relative;
     width: 100%;
     z-index: 1;
-    padding-right: 180px
+    padding-right: 180px;
+    overflow: hidden;
 }
 
 .main-container .product-view .single-product-image .images.nothumb {
@@ -17802,28 +17798,28 @@ body.quickview {
     overflow: hidden
 }
 
-.main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul {
+.main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul {
     width: 117px
 }
 
-.main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul li {
+.main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul li {
     overflow: hidden;
     padding: 5px 0
 }
 
-.main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul li a {
+.main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul li a {
     margin: 0;
     border: 1px solid #d3d3d3
 }
 
-.main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul li a img {
+.main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul li a img {
     opacity: 1;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease
 }
 
-.main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul li a:hover img,
-.main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul li a.active img {
+.main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul li a:hover img,
+.main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul li a.active img {
     opacity: 0.5
 }
 
@@ -17831,16 +17827,19 @@ body.quickview {
 .main-container .product-view .single-product-image .thumbnails.slider #slider-next {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 100%;
+    position: absolute;
     display: block !important;
     font-size: 22px;
     height: 28px;
-    left: 50%;
+    left: 0;
     line-height: 28px;
     margin-left: -14px;
     text-align: center;
     top: 20px;
     width: 28px;
-    right: auto;
+    right: 0;
+    margin: auto;
+    z-index: 1801;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease
 }
@@ -17848,6 +17847,9 @@ body.quickview {
 .main-container .product-view .single-product-image .thumbnails.slider #slider-prev:hover,
 .main-container .product-view .single-product-image .thumbnails.slider #slider-next:hover {
     background: #c38749;
+}
+.main-container .product-view .single-product-image .thumbnails.slider #slider-prev:hover a,
+.main-container .product-view .single-product-image .thumbnails.slider #slider-next:hover a{
     color: #fff
 }
 
@@ -17990,7 +17992,7 @@ body.quickview {
     font-size: 13px;
     line-height: 24px;
     margin: 30px 0;
-    padding: 30px 0;
+    padding: 65px 0;
     border-top: 1px solid #d3d3d3;
     border-bottom: 1px solid #d3d3d3
 }
@@ -18127,7 +18129,8 @@ body.quickview {
     font-weight: 400;
     height: 50px;
     padding: 0;
-    width: 65px
+    width: 65px;
+    text-align: center;
 }
 
 .main-container .product-view .summary.single-product-info .cart .quantity .input-text:focus {
@@ -22210,10 +22213,6 @@ body.quickview {
     padding: 0
 }
 
-.main-container .category-carousel .slick-slide {
-    padding: 0 1px 0 0
-}
-
 .main-container .category-carousel .slick-slide a {
     display: block
 }
@@ -22324,10 +22323,6 @@ body.quickview {
 
 .main-container .products-carousel .wpb_content_element .wpb_wrapper>h3 span {
     padding-right: 30px
-}
-
-.main-container .products-carousel .shop-products {
-    margin: 0 -15px
 }
 
 .main-container .products-carousel .shop-products .item-col {
@@ -23510,7 +23505,7 @@ body.quickview {
     .main-container .product-view .single-product-image .thumbnails.slider {
         width: 90px
     }
-    .main-container .product-view .single-product-image .thumbnails.slider .caroufredsel_wrapper ul li {
+    .main-container .product-view .single-product-image .thumbnails.slider .bx-wrapper ul li {
         width: 90px
     }
     .main-container .product-view .product .woocommerce-tabs {
@@ -23755,8 +23750,16 @@ body.quickview {
     .main-container .page-content .entry-content .shop_table th {
         white-space: pre-wrap
     }
-    .main-container .page-content .entry-content .shop_table .product-subtotal {
-        display: none
+    .main-container .page-content .entry-content .shop_table .product-subtotal, .main-container .page-content .entry-content .shop_table .product-thumbnail {
+        display: none;
+    }
+    .main-container .page-content .entry-content .shop_table td.product-price,
+    .main-container .page-content .entry-content .shop_table td #font_car_total,
+     .main-container .page-content .entry-content .shop_table #font_car_total1{
+        font-size: 13px;
+    }
+    .main-container .page-content .entry-content .shop_table .tongtien .tt{
+        border-left: none;
     }
     .main-container .page-content .entry-content .shop_table.wishlist_table .product-price,
     .main-container .page-content .entry-content .shop_table.wishlist_table .product-stock-stauts {

@@ -2637,7 +2637,7 @@ body #mega_main_menu li.default_dropdown>.mega_dropdown>li.menu-item.drop_to_lef
 #mega_main_menu.primary li .mega_dropdown a,
 #mega_main_menu.primary li .mega_dropdown a *,
 #mega_main_menu.primary li li .post_details a {
-    color: #428bca
+    color: #428bca;
 }
 #mega_main_menu.primary li.default_dropdown>.mega_dropdown>.menu-item>.item_link:before {
     border-color: #428bca
