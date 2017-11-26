@@ -1,6 +1,6 @@
 
-<h2>Form control: input</h2>
-<form method="post" action="<?php echo base_url('ci-admin/menu/edit/'.$data[0]['id']) ?>">
+<h2>Edit menu</h2>
+<form  class="form-create-menu" method="post" action="<?php echo base_url('ci-admin/menu/edit/'.$data[0]['id']) ?>">
    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
    <input type="hidden" name="id" value="<?php echo $data[0]['id'] ?>" id="id">
 

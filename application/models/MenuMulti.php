@@ -58,7 +58,6 @@
       return $categories;
     }
     public function sub_categories_auto($id){
-
       $this->db->select('*');
       $this->db->from('menu');
       $this->db->where('parent', $id);

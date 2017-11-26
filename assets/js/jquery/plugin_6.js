@@ -1102,34 +1102,34 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
     "use strict";
 
     function b(b) {
-        return this.each(function() {
-            var d = a(this),
-                e = d.data("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/bs.tab");
-            e || d.data("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/bs.tab", e = new c(this)), "string" == typeof b && e[b]()
-        })
+        // return this.each(function() {
+        //     var d = a(this),
+        //         e = d.data("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/bs.tab");
+        //     e || d.data("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/bs.tab", e = new c(this)), "string" == typeof b && e[b]()
+        // })
     }
     var c = function(b) {
         this.element = a(b)
     };
     c.VERSION = "3.2.0", c.prototype.show = function() {
-        var b = this.element,
-            c = b.closest("ul:not(.dropdown-menu)"),
-            d = b.data("target");
-        if (d || (d = b.attr("href"), d = d && d.replace(/.*(?=#[^\s]*$)/, "")), !b.parent("li").hasClass("active")) {
-            var e = c.find(".active:last a")[0],
-                f = a.Event("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/show.bs.tab", {
-                    relatedTarget: e
-                });
-            if (b.trigger(f), !f.isDefaultPrevented()) {
-                var g = a(d);
-                this.activate(b.closest("li"), c), this.activate(g, g.parent(), function() {
-                    b.trigger({
-                        type: "http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/shown.bs.tab",
-                        relatedTarget: e
-                    })
-                })
-            }
-        }
+        // var b = this.element,
+        //     c = b.closest("ul:not(.dropdown-menu)"),
+        //     d = b.data("target");
+        // if (d || (d = b.attr("href"), d = d && d.replace(/.*(?=#[^\s]*$)/, "")), !b.parent("li").hasClass("active")) {
+        //     var e = c.find(".active:last a")[0],
+        //         f = a.Event("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/show.bs.tab", {
+        //             relatedTarget: e
+        //         });
+        //     if (b.trigger(f), !f.isDefaultPrevented()) {
+        //         var g = a(d);
+        //         this.activate(b.closest("li"), c), this.activate(g, g.parent(), function() {
+        //             b.trigger({
+        //                 type: "http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/shown.bs.tab",
+        //                 relatedTarget: e
+        //             })
+        //         })
+        //     }
+        // }
     }, c.prototype.activate = function(b, c, d) {
         function e() {
             f.removeClass("active").find("> .dropdown-menu > .active").removeClass("active"), b.addClass("active"), g ? (b[0].offsetWidth, b.addClass("in")) : b.removeClass("fade"), b.parent(".dropdown-menu") && b.closest("li.dropdown").addClass("active"), d && d()
@@ -2867,26 +2867,26 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
             p.unbind(".fb");
             n.unbind(".fb")
         },
-        bindEvents: function() {
-            var a = b.current,
-                d;
-            a && (n.bind("orientationchange.fb" + (s ? "" : " http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/resize.fb") + (a.autoCenter && !a.locked ? " http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/scroll.fb" : ""), b.update), (d = a.keys) && p.bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/keydown.fb", function(e) {
-                var c = e.which || e.keyCode,
-                    k = e.target || e.srcElement;
-                if (27 === c && b.coming) return !1;
-                !e.ctrlKey && (!e.altKey && !e.shiftKey && !e.metaKey && (!k || !k.type && !f(k).is("[contenteditable]"))) && f.each(d, function(d, k) {
-                    if (1 < a.group.length && k[c] !== v) return b[d](k[c]), e.preventDefault(), !1;
-                    if (-1 < f.inArray(c, k)) return b[d](), e.preventDefault(), !1
-                })
-            }), f.fn.mousewheel && a.mouseWheel && b.wrap.bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/mousewheel.fb", function(d, c, k, g) {
-                for (var h = f(d.target || null), j = !1; h.length && !j && !h.is(".fancybox-skin") && !h.is(".fancybox-wrap");) j = h[0] && !(h[0].style.overflow && "hidden" === h[0].style.overflow) && (h[0].clientWidth && h[0].scrollWidth > h[0].clientWidth || h[0].clientHeight && h[0].scrollHeight > h[0].clientHeight), h = f(h).parent();
-                if (0 !== c && !j && 1 < b.group.length && !a.canShrink) {
-                    if (0 < g || 0 < k) b.prev(0 < g ? "down" : "left");
-                    else if (0 > g || 0 > k) b.next(0 > g ? "up" : "right");
-                    d.preventDefault()
-                }
-            }))
-        },
+        // bindEvents: function() {
+        //     var a = b.current,
+        //         d;
+        //     a && (n.bind("orientationchange.fb" + (s ? "" : " http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/resize.fb") + (a.autoCenter && !a.locked ? " http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/scroll.fb" : ""), b.update), (d = a.keys) && p.bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/keydown.fb", function(e) {
+        //         var c = e.which || e.keyCode,
+        //             k = e.target || e.srcElement;
+        //         if (27 === c && b.coming) return !1;
+        //         !e.ctrlKey && (!e.altKey && !e.shiftKey && !e.metaKey && (!k || !k.type && !f(k).is("[contenteditable]"))) && f.each(d, function(d, k) {
+        //             if (1 < a.group.length && k[c] !== v) return b[d](k[c]), e.preventDefault(), !1;
+        //             if (-1 < f.inArray(c, k)) return b[d](), e.preventDefault(), !1
+        //         })
+        //     }), f.fn.mousewheel && a.mouseWheel && b.wrap.bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/mousewheel.fb", function(d, c, k, g) {
+        //         for (var h = f(d.target || null), j = !1; h.length && !j && !h.is(".fancybox-skin") && !h.is(".fancybox-wrap");) j = h[0] && !(h[0].style.overflow && "hidden" === h[0].style.overflow) && (h[0].clientWidth && h[0].scrollWidth > h[0].clientWidth || h[0].clientHeight && h[0].scrollHeight > h[0].clientHeight), h = f(h).parent();
+        //         if (0 !== c && !j && 1 < b.group.length && !a.canShrink) {
+        //             if (0 < g || 0 < k) b.prev(0 < g ? "down" : "left");
+        //             else if (0 > g || 0 > k) b.next(0 > g ? "up" : "right");
+        //             d.preventDefault()
+        //         }
+        //     }))
+        // },
         trigger: function(a, d) {
             var e, c = d || b.coming || b.current;
             if (c) {
@@ -3000,23 +3000,23 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
                 }
             }))
         },
-        _loadIframe: function() {
-            var a = b.coming,
-                d = f(a.tpl.iframe.replace(/\{rnd\}/g, (new Date).getTime())).attr("scrolling", s ? "auto" : a.iframe.scrolling).attr("src", a.href);
-            f(a.wrap).bind("onReset", function() {
-                try {
-                    f(this).find("iframe").hide().attr("src", "//about:blank").end().empty()
-                } catch (a) {}
-            });
-            a.iframe.preload && (b.showLoading(), d.one("load", function() {
-                f(this).data("ready", 1);
-                s || f(this).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/load.fb", b.update);
-                f(this).parents(".fancybox-wrap").width("100%").removeClass("fancybox-tmp").show();
-                b._afterLoad()
-            }));
-            a.content = d.appendTo(a.inner);
-            a.iframe.preload || b._afterLoad()
-        },
+        // _loadIframe: function() {
+        //     var a = b.coming,
+        //         d = f(a.tpl.iframe.replace(/\{rnd\}/g, (new Date).getTime())).attr("scrolling", s ? "auto" : a.iframe.scrolling).attr("src", a.href);
+        //     f(a.wrap).bind("onReset", function() {
+        //         try {
+        //             f(this).find("iframe").hide().attr("src", "//about:blank").end().empty()
+        //         } catch (a) {}
+        //     });
+        //     a.iframe.preload && (b.showLoading(), d.one("load", function() {
+        //         f(this).data("ready", 1);
+        //         s || f(this).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/load.fb", b.update);
+        //         f(this).parents(".fancybox-wrap").width("100%").removeClass("fancybox-tmp").show();
+        //         b._afterLoad()
+        //     }));
+        //     a.content = d.appendTo(a.inner);
+        //     a.iframe.preload || b._afterLoad()
+        // },
         _preloadImages: function() {
             var a = b.group,
                 d = b.current,
@@ -3168,15 +3168,15 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
             c.left = w(Math.max(c.left, c.left + (e.w - f) * d.leftRatio));
             return c
         },
-        _afterZoomIn: function() {
-            var a = b.current;
-            a && (b.isOpen = b.isOpened = !0, b.wrap.css("overflow", "visible").addClass("fancybox-opened"), b.update(), (a.closeClick || a.nextClick && 1 < b.group.length) && b.inner.css("cursor", "pointer").bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", function(d) {
-                !f(d.target).is("a") && !f(d.target).parent().is("a") && (d.preventDefault(), b[a.closeClick ? "close" : "next"]())
-            }), a.closeBtn && f(a.tpl.closeBtn).appendTo(b.skin).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", function(a) {
-                a.preventDefault();
-                b.close()
-            }), a.arrows && 1 < b.group.length && ((a.loop || 0 < a.index) && f(a.tpl.prev).appendTo(b.outer).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", b.prev), (a.loop || a.index < b.group.length - 1) && f(a.tpl.next).appendTo(b.outer).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", b.next)), b.trigger("afterShow"), !a.loop && a.index === a.group.length - 1 ? b.play(!1) : b.opts.autoPlay && !b.player.isActive && (b.opts.autoPlay = !1, b.play()))
-        },
+        // _afterZoomIn: function() {
+        //     var a = b.current;
+        //     a && (b.isOpen = b.isOpened = !0, b.wrap.css("overflow", "visible").addClass("fancybox-opened"), b.update(), (a.closeClick || a.nextClick && 1 < b.group.length) && b.inner.css("cursor", "pointer").bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", function(d) {
+        //         !f(d.target).is("a") && !f(d.target).parent().is("a") && (d.preventDefault(), b[a.closeClick ? "close" : "next"]())
+        //     }), a.closeBtn && f(a.tpl.closeBtn).appendTo(b.skin).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", function(a) {
+        //         a.preventDefault();
+        //         b.close()
+        //     }), a.arrows && 1 < b.group.length && ((a.loop || 0 < a.index) && f(a.tpl.prev).appendTo(b.outer).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", b.prev), (a.loop || a.index < b.group.length - 1) && f(a.tpl.next).appendTo(b.outer).bind("http://demo.roadthemes.com/maroko/wp-content/cache/minify/000000/click.fb", b.next)), b.trigger("afterShow"), !a.loop && a.index === a.group.length - 1 ? b.play(!1) : b.opts.autoPlay && !b.player.isActive && (b.opts.autoPlay = !1, b.play()))
+        // },
         _afterZoomOut: function(a) {
             a = a || b.current;
             f(".fancybox-wrap").trigger("onReset").remove();
@@ -3585,118 +3585,118 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
  *          http://maps.google.com/?ll=48.857995,2.294297&spn=0.007666,0.021136&t=m&z=16
  *          http://maps.google.com/?ll=48.859463,2.292626&spn=0.000965,0.002642&t=m&z=19&layer=c&cbll=48.859524,2.292532&panoid=YJ0lq28OOy3VT2IqIuVY0g&cbp=12,151.58,,0,-15.56
  */
-(function($) {
-    "use strict";
-    var F = $.fancybox,
-        format = function(url, rez, params) {
-            params = params || '';
-            if ($.type(params) === "object") {
-                params = $.param(params, true);
-            }
-            $.each(rez, function(key, value) {
-                url = url.replace('$' + key, value || '');
-            });
-            if (params.length) {
-                url += (url.indexOf('?') > 0 ? '&' : '?') + params;
-            }
-            return url;
-        };
-    F.helpers.media = {
-        defaults: {
-            youtube: {
-                matcher: /(youtube\.com|youtu\.be|youtube-nocookie\.com)\/(watch\?v=|v\/|u\/|embed\/?)?(videoseries\?list=(.*)|[\w-]{11}|\?listType=(.*)&list=(.*)).*/i,
-                params: {
-                    autoplay: 1,
-                    autohide: 1,
-                    fs: 1,
-                    rel: 0,
-                    hd: 1,
-                    wmode: 'opaque',
-                    enablejsapi: 1
-                },
-                type: 'iframe',
-                url: '//www.youtube.com/embed/$3'
-            },
-            vimeo: {
-                matcher: /(?:vimeo(?:pro)?.com)\/(?:[^\d]+)?(\d+)(?:.*)/,
-                params: {
-                    autoplay: 1,
-                    hd: 1,
-                    show_title: 1,
-                    show_byline: 1,
-                    show_portrait: 0,
-                    fullscreen: 1
-                },
-                type: 'iframe',
-                url: '//player.vimeo.com/video/$1'
-            },
-            metacafe: {
-                matcher: /metacafe.com\/(?:watch|fplayer)\/([\w\-]{1,10})/,
-                params: {
-                    autoPlay: 'yes'
-                },
-                type: 'swf',
-                url: function(rez, params, obj) {
-                    obj.swf.flashVars = 'playerVars=' + $.param(params, true);
-                    return '//www.metacafe.com/fplayer/' + rez[1] + '/.swf';
-                }
-            },
-            dailymotion: {
-                matcher: /dailymotion.com\/video\/(.*)\/?(.*)/,
-                params: {
-                    additionalInfos: 0,
-                    autoStart: 1
-                },
-                type: 'swf',
-                url: '//www.dailymotion.com/swf/video/$1'
-            },
-            twitvid: {
-                matcher: /twitvid\.com\/([a-zA-Z0-9_\-\?\=]+)/i,
-                params: {
-                    autoplay: 0
-                },
-                type: 'iframe',
-                url: 'http://www.twitvid.com/embed.php?guid=$1'
-            },
-            twitpic: {
-                matcher: /twitpic\.com\/(?!(?:place|photos|events)\/)([a-zA-Z0-9\?\=\-]+)/i,
-                type: 'image',
-                url: '//twitpic.com/show/full/$1/'
-            },
-            instagram: {
-                matcher: /(instagr\.am|instagram\.com)\/p\/([a-zA-Z0-9_\-]+)\/?/i,
-                type: 'image',
-                url: '//$1/p/$2/media/?size=l'
-            },
-            google_maps: {
-                matcher: /maps\.google\.([a-z]{2,3}(\.[a-z]{2})?)\/(\?ll=|maps\?)(.*)/i,
-                type: 'iframe',
-                url: function(rez) {
-                    return '//maps.google.' + rez[1] + '/' + rez[3] + '' + rez[4] + '&output=' + (rez[4].indexOf('layer=c') > 0 ? 'svembed' : 'embed');
-                }
-            }
-        },
-        beforeLoad: function(opts, obj) {
-            var url = obj.href || '',
-                type = false,
-                what, item, rez, params;
-            for (what in opts) {
-                if (opts.hasOwnProperty(what)) {
-                    item = opts[what];
-                    rez = url.match(item.matcher);
-                    if (rez) {
-                        type = item.type;
-                        params = $.extend(true, {}, item.params, obj[what] || ($.isPlainObject(opts[what]) ? opts[what].params : null));
-                        url = $.type(item.url) === "function" ? item.url.call(this, rez, params, obj) : format(item.url, rez, params);
-                        break;
-                    }
-                }
-            }
-            if (type) {
-                obj.href = url;
-                obj.type = type;
-                obj.autoHeight = false;
-            }
-        }
-    };
-}(jQuery));
+// (function($) {
+//     "use strict";
+//     var F = $.fancybox,
+//         format = function(url, rez, params) {
+//             params = params || '';
+//             if ($.type(params) === "object") {
+//                 params = $.param(params, true);
+//             }
+//             $.each(rez, function(key, value) {
+//                 url = url.replace('$' + key, value || '');
+//             });
+//             if (params.length) {
+//                 url += (url.indexOf('?') > 0 ? '&' : '?') + params;
+//             }
+//             return url;
+//         };
+//     F.helpers.media = {
+//         defaults: {
+//             youtube: {
+//                 matcher: /(youtube\.com|youtu\.be|youtube-nocookie\.com)\/(watch\?v=|v\/|u\/|embed\/?)?(videoseries\?list=(.*)|[\w-]{11}|\?listType=(.*)&list=(.*)).*/i,
+//                 params: {
+//                     autoplay: 1,
+//                     autohide: 1,
+//                     fs: 1,
+//                     rel: 0,
+//                     hd: 1,
+//                     wmode: 'opaque',
+//                     enablejsapi: 1
+//                 },
+//                 type: 'iframe',
+//                 url: '//www.youtube.com/embed/$3'
+//             },
+//             vimeo: {
+//                 matcher: /(?:vimeo(?:pro)?.com)\/(?:[^\d]+)?(\d+)(?:.*)/,
+//                 params: {
+//                     autoplay: 1,
+//                     hd: 1,
+//                     show_title: 1,
+//                     show_byline: 1,
+//                     show_portrait: 0,
+//                     fullscreen: 1
+//                 },
+//                 type: 'iframe',
+//                 url: '//player.vimeo.com/video/$1'
+//             },
+//             metacafe: {
+//                 matcher: /metacafe.com\/(?:watch|fplayer)\/([\w\-]{1,10})/,
+//                 params: {
+//                     autoPlay: 'yes'
+//                 },
+//                 type: 'swf',
+//                 url: function(rez, params, obj) {
+//                     obj.swf.flashVars = 'playerVars=' + $.param(params, true);
+//                     return '//www.metacafe.com/fplayer/' + rez[1] + '/.swf';
+//                 }
+//             },
+//             dailymotion: {
+//                 matcher: /dailymotion.com\/video\/(.*)\/?(.*)/,
+//                 params: {
+//                     additionalInfos: 0,
+//                     autoStart: 1
+//                 },
+//                 type: 'swf',
+//                 url: '//www.dailymotion.com/swf/video/$1'
+//             },
+//             twitvid: {
+//                 matcher: /twitvid\.com\/([a-zA-Z0-9_\-\?\=]+)/i,
+//                 params: {
+//                     autoplay: 0
+//                 },
+//                 type: 'iframe',
+//                 url: 'http://www.twitvid.com/embed.php?guid=$1'
+//             },
+//             twitpic: {
+//                 matcher: /twitpic\.com\/(?!(?:place|photos|events)\/)([a-zA-Z0-9\?\=\-]+)/i,
+//                 type: 'image',
+//                 url: '//twitpic.com/show/full/$1/'
+//             },
+//             instagram: {
+//                 matcher: /(instagr\.am|instagram\.com)\/p\/([a-zA-Z0-9_\-]+)\/?/i,
+//                 type: 'image',
+//                 url: '//$1/p/$2/media/?size=l'
+//             },
+//             google_maps: {
+//                 matcher: /maps\.google\.([a-z]{2,3}(\.[a-z]{2})?)\/(\?ll=|maps\?)(.*)/i,
+//                 type: 'iframe',
+//                 url: function(rez) {
+//                     return '//maps.google.' + rez[1] + '/' + rez[3] + '' + rez[4] + '&output=' + (rez[4].indexOf('layer=c') > 0 ? 'svembed' : 'embed');
+//                 }
+//             }
+//         },
+//         beforeLoad: function(opts, obj) {
+//             var url = obj.href || '',
+//                 type = false,
+//                 what, item, rez, params;
+//             for (what in opts) {
+//                 if (opts.hasOwnProperty(what)) {
+//                     item = opts[what];
+//                     rez = url.match(item.matcher);
+//                     if (rez) {
+//                         type = item.type;
+//                         params = $.extend(true, {}, item.params, obj[what] || ($.isPlainObject(opts[what]) ? opts[what].params : null));
+//                         url = $.type(item.url) === "function" ? item.url.call(this, rez, params, obj) : format(item.url, rez, params);
+//                         break;
+//                     }
+//                 }
+//             }
+//             if (type) {
+//                 obj.href = url;
+//                 obj.type = type;
+//                 obj.autoHeight = false;
+//             }
+//         }
+//     };
+// }(jQuery));
